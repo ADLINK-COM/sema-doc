@@ -1,6 +1,6 @@
 
 
-- [**Introduction**](source/index.md)
+- [**Introduction**](source/Intro.md)
 
 
 - [**How to Install SEMA**](source/HowToInstall.md)
