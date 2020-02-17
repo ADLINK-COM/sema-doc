@@ -49,11 +49,6 @@ Get the capabilities of **run-time watchdog**
     ​		Pointer to a buffer that receives maximum supported event timeout of the watchdog timer in 		miliseconds.
 
 
-
-<br />
-<br />
-
-
 ```
 uint32_t EApiWDogStart(
     uint32_t delay,
