@@ -24,9 +24,9 @@ for supervision and troubleshooting.
 
 This describes the different designs on WIndows & Linux.
 
-|                Windows SEMA 4.0                |              Linux SEMA 4.0  (TBD)               |
-| :--------------------------------------------: | :----------------------------------------------: |
-| ![](README.assets/sema_highlevel_arch_win.png) | ![](README.assets/sema_highlevel_arch_linux.png) |
+|                   Windows SEMA 4.0                    |                  Linux SEMA 4.0  (TBD)                  |
+| :---------------------------------------------------: | :-----------------------------------------------------: |
+| ![](source/README.assets/sema_highlevel_arch_win.png) | ![](source/README.assets/sema_highlevel_arch_linux.png) |
 
 
 
