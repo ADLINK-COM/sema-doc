@@ -12,11 +12,11 @@ Please go to [windows sema reposioty]()  to download the Installer which contain
 Running the installwe which will be automatically installed SMBus driver, EAPI library and command line utility.
 
 1. After download, please execute the installer file and click "Next" button
-<img src="source/HowtoInstall.assets/Capture1.PNG" alt="Capture1" style="zoom: 80%;" />
+<img src="HowtoInstall.assets/Capture1.PNG" alt="Capture1" style="zoom: 80%;" />
 
 
 2. Click "Next" Button to start to install
-<img src="source/HowtoInstall.assets/Capture2.PNG" alt="Capture2" style="zoom:80%;" />
+<img src="sHowtoInstall.assets/Capture2.PNG" alt="Capture2" style="zoom:80%;" />
 
 3. Until you see "Finish" button for the successful installation.
 <img src="HowtoInstall.assets/Capture4.PNG" alt="Capture4" style="zoom:80%;" />
