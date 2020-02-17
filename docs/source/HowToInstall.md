@@ -13,7 +13,7 @@ Running the installwe which will be automatically installed SMBus driver, EAPI l
 
 1. After download, please execute the installer file and click "Next" button
 
-  ![Capture1-1581922088881](HowToInstall.assets/Capture1-1581922088881-1581922238448.PNG)
+  ![Capture1-1581922088881](HowToInstall.assets/Capture1.PNG)
 
 
 2. Click "Next" Button to start to install
