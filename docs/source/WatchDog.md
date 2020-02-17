@@ -2,7 +2,7 @@
 
 Support two watchdog controls of the board. If the watchdog begins and reaches the pre-set time, it will access the CPU’s RESET signal to reset the system.
 
-![watchdog_timing_chart](source/WatchDog.assets/watchdog_timing_chart.png)
+![watchdog_timing_chart](WatchDog.assets/watchdog_timing_chart.png)
 
 
 
