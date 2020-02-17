@@ -39,7 +39,7 @@
   * For Linux SEMA 4.0:
     It provides two methods to access BMC :
     1. EAPI Library:  
-       With the introduction of the revision 2.0 of the COM Express specification a software interface 		(available free of charge at https://www.picmg.org/wp-content/uploads/COM_EAPI_R1_0.pdf) was created.  
+       With the introduction of the COM Express specification a software interface (available free of charge at https://www.picmg.org/wp-content/uploads/COM_EAPI_R1_0.pdf) was created.  
 
     2. Sysfs Interface:
        With the exposure of Sysfs interface, it can be easier and straightforward to access.
