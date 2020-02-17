@@ -27,7 +27,7 @@ This describes the different designs on WIndows & Linux.
 
 |                       Windows SEMA 4.0                       |                    Linux SEMA 4.0  (TBD)                     |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img src="source/Index.assets/sema_highlevel_arch_win.png" alt="sema_highlevel_arch_win" style="zoom:50%;" /> | <img src="source/Index.assets/sema_highlevel_arch_linux.png" alt="sema_highlevel_arch_linux" style="zoom:50%;" /> |
+| <img src="Index.assets/sema_highlevel_arch_win.png" alt="sema_highlevel_arch_win" style="zoom:50%;" /> | <img src="Index.assets/sema_highlevel_arch_linux.png" alt="sema_highlevel_arch_linux" style="zoom:50%;" /> |
 
 
 

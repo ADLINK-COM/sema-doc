@@ -66,107 +66,101 @@ uint32_t EApiBoardGetValue(uint32_t Id, uint8_t* pData, uint32_t nSize)
     | SEMA_EAPI_ID_BOARD_BMC_STATUS              | status of the BMC                                |                             |
     | SEMA_EAPI_ID_BOARD_IO_CURRENT              | IO current                                       |                             |
 
+  * uint8_t* pData:
+    Pointer to a buffer that receives the value's data. This  parameter can be NULL if the data is not required.
+    
+  * uint32_t nSize:
+    
+    Pointer to a variable that specifies the size, in bytes, of the buffer pointed to by the pBuffer parameter. When the function returns, this variable contains the size of the data copied to pBuffer including the terminating null character.
+    
+    
+  
+
+**Note 1**: The following table describes the definition of Restart Event:
+| Code | Code Name   | Description                                                  |
+| ---- | ----------- | ------------------------------------------------------------ |
+| 0x00 | UNKNOWN     | Unknown reason of restart (shown only on first BMC power-up) |
+| 0x20 | SW_RESET    | A reset by software caused the restart of the system         |
+| 0x30 | HW_RESET    | A reset by hardware caused the restart of the system (e.g. reset button) |
+| 0x40 | WATCHDOG    | The Watchdog has restarted the system                        |
+| 0x50 | BIOS_FAULT  | Standard BIOS is corrupted -> boot from Fail-Safe BIOS       |
+| 0x60 | POWER_DOWN  | The system was shut down (e.g. power button, ACPI shutdown)  |
+| 0x70 | POWER_LOSS  | The system is restarted after a power loss (e.g. external power supply instable or switched off while the system was running) |
+| 0x80 | POWER_CYCLE | The system is restarted after a power cycle (e.g. internal power supply has failed) |
+| 0x90 | VIN_DROP    | The system is restarted after a voltage drop of the main input voltage |
+| 0xA0 | PWR_FAIL    | The system is restarted after a PWRFAIL detection of an internal power supply circuit |
+| 0xB0 | CRIT_TEMP   | The system was shut down by ACPI Watchdog (CPU reached critical temperature) |
+| 0xC0 | WAKE_UP     | The system has received a wake event and resumes operation from a sleep state |
 
 
-    **Note 1**: The following table describes the definition of Restart Event:
 
-
-    | Code | Code Name   | Description                                                  |
-    | ---- | ----------- | ------------------------------------------------------------ |
-    | 0x00 | UNKNOWN     | Unknown reason of restart (shown only on first BMC power-up) |
-    | 0x20 | SW_RESET    | A reset by software caused the restart of the system         |
-    | 0x30 | HW_RESET    | A reset by hardware caused the restart of the system (e.g. reset button) |
-    | 0x40 | WATCHDOG    | The Watchdog has restarted the system                        |
-    | 0x50 | BIOS_FAULT  | Standard BIOS is corrupted -> boot from Fail-Safe BIOS       |
-    | 0x60 | POWER_DOWN  | The system was shut down (e.g. power button, ACPI shutdown)  |
-    | 0x70 | POWER_LOSS  | The system is restarted after a power loss (e.g. external power supply instable or switched off while the system was running) |
-    | 0x80 | POWER_CYCLE | The system is restarted after a power cycle (e.g. internal power supply has failed) |
-    | 0x90 | VIN_DROP    | The system is restarted after a voltage drop of the main input voltage |
-    | 0xA0 | PWR_FAIL    | The system is restarted after a PWRFAIL detection of an internal power supply circuit |
-    | 0xB0 | CRIT_TEMP   | The system was shut down by ACPI Watchdog (CPU reached critical temperature) |
-    | 0xC0 | WAKE_UP     | The system has received a wake event and resumes operation from a sleep state |
-
-
-
-    **Note 2**: The following table describes the definition of BMC Capability Bits. it shows that which functions can be supported on your platform:
-
+**Note 2**: The following table describes the definition of BMC Capability Bits. it shows that which functions can be supported on your platform:
     -  When Bit value goes to **1**, it indicates **enabled**
-
     -  When Bit value goes to **0**, it indicates **disabled**
 
-    | Bit    | Description                                          |
-    | ------ | ---------------------------------------------------- |
-    | Bit 0  | Uptime & power cycles counter supported              |
-    | Bit 1  | System restart event supported                       |
-    | Bit 2  | 1k USER flash memory available supported             |
-    | Bit 3  | Watchdog supported                                   |
-    | Bit 4  | Temperature sensors installed/available              |
-    | Bit 5  | Voltage sensors installed/available                  |
-    | Bit 6  | Storage of failure reason available (exception code) |
-    | Bit 7  | Bootloader timeout Configuration                     |
-    | Bit 8  | Display control available                            |
-    | Bit 9  | Power up watchdog available                          |
-    | Bit 10 | the current sensors installed/available ??????       |
-    | Bit 11 | Boot counter supported                               |
-    | Bit 12 | Input-Voltage0                                       |
-    | Bit 13 | Input-Voltage1                                       |
-    | Bit 14 | Rsense for Input-Voltage: 0=8 mR, 1=4 mR )           |
-    | Bit 15 | Fail-Safe-BIOS supported                             |
-    | Bit 16 | Ext. I2C bus #1 available                            |
-    | Bit 17 | Ext. I2C bus #2 available                            |
-    | Bit 18 | CPU FAN available                                    |
-    | Bit 19 | System Fan available                                 |
-    | Bit 20 | AT/ATX mode supported                                |
-    | Bit 21 | Thermal SCI supported                                |
-    | Bit 22 | Power up to last state                               |
-    | Bit 23 | Backlight restore                                    |
-    | Bit 24 | DTS register                                         |
-    | Bit 25 | DTS register offset                                  |
-    | Bit 26 | Smart fan #3 available                               |
-    | Bit 27 | Smart fan #4 available                               |
-    | Bit 28 | TIVA GPIOs support (12 GPIOs)                        |
-    | Bit 29 | Ext. I2C bus #3 available                            |
-    | Bit 30 | Ext. I2C bus #4 available                            |
-    | Bit 31 | BMC is from TIVA type                                |
+| Bit    | Description                                          |
+| ------ | ---------------------------------------------------- |
+| Bit 0  | Uptime & power cycles counter supported              |
+| Bit 1  | System restart event supported                       |
+| Bit 2  | 1k USER flash memory available supported             |
+| Bit 3  | Watchdog supported                                   |
+| Bit 4  | Temperature sensors installed/available              |
+| Bit 5  | Voltage sensors installed/available                  |
+| Bit 6  | Storage of failure reason available (exception code) |
+| Bit 7  | Bootloader timeout Configuration                     |
+| Bit 8  | Display control available                            |
+| Bit 9  | Power up watchdog available                          |
+| Bit 10 | the current sensors installed/available ??????       |
+| Bit 11 | Boot counter supported                               |
+| Bit 12 | Input-Voltage0                                       |
+| Bit 13 | Input-Voltage1                                       |
+| Bit 14 | Rsense for Input-Voltage: 0=8 mR, 1=4 mR )           |
+| Bit 15 | Fail-Safe-BIOS supported                             |
+| Bit 16 | Ext. I2C bus #1 available                            |
+| Bit 17 | Ext. I2C bus #2 available                            |
+| Bit 18 | CPU FAN available                                    |
+| Bit 19 | System Fan available                                 |
+| Bit 20 | AT/ATX mode supported                                |
+| Bit 21 | Thermal SCI supported                                |
+| Bit 22 | Power up to last state                               |
+| Bit 23 | Backlight restore                                    |
+| Bit 24 | DTS register                                         |
+| Bit 25 | DTS register offset                                  |
+| Bit 26 | Smart fan #3 available                               |
+| Bit 27 | Smart fan #4 available                               |
+| Bit 28 | TIVA GPIOs support (12 GPIOs)                        |
+| Bit 29 | Ext. I2C bus #3 available                            |
+| Bit 30 | Ext. I2C bus #4 available                            |
+| Bit 31 | BMC is from TIVA type                                |
 
 
-    **Note 3**: The following table describes the definition of the extended BMC Capability Bits:
+**Note 3**: The following table describes the definition of the extended BMC Capability Bits:
 
-    | Bit    | Description                                          |
-    | ------ | ---------------------------------------------------- |
-    | Bit 32 | Board2 Temperature supported                         |
-    | Bit 33 | PEC protocol supported                               |
-    | Bit 34 | reserved                                          |
-    | Bit 35 | Error log supported                                  |
-    | Bit 36 | 1-Wire supported                                     |
-    | Bit 37 | Wake-by-BMC supported                                |
-    | Bit 38 | GPIO ADC supported                                   |
-    | Bit 39 | SoftFan supported                                    |
-    | Bit 40 | Parameter memory supported                           |
-    | Bit 41 | Extended I2C registers for status and data supported |
+| Bit    | Description                                          |
+| ------ | ---------------------------------------------------- |
+| Bit 32 | Board2 Temperature supported                         |
+| Bit 33 | PEC protocol supported                               |
+| Bit 34 | reserved                                          |
+| Bit 35 | Error log supported                                  |
+| Bit 36 | 1-Wire supported                                     |
+| Bit 37 | Wake-by-BMC supported                                |
+| Bit 38 | GPIO ADC supported                                   |
+| Bit 39 | SoftFan supported                                    |
+| Bit 40 | Parameter memory supported                           |
+| Bit 41 | Extended I2C registers for status and data supported |
 
 
+**Note 4**: The following table describes the definition of the BMC Flag/Status:
 
-    **Note 4**: The following table describes the definition of the BMC Flag/Status:
-
-    | Bit       | Description                                                  |
-    | --------- | ------------------------------------------------------------ |
-    | Bit 7     | BIOS Select<br />    - Single BIOS = 0<br />    - Fail-Safe-BIOS = 1 |
-    | Bit 6     | ATX Mode<br />    - AT Mode = 0<br />    - ATX mode = 1      |
-    | Bit 5     | reserved                                                   |
-    | Bit 0 - 4 | Exception Code <br />**Note**: Code definition will be different for each hardware. please refer to [ADLINK offifical Website](https://www.adlinktech.com/) to seach for the Hardware User Manual or use **EApiGetExceptionDescription** |
-
-  * uint8_t* pData:
-
-    Pointer to a buffer that receives the value's data. This  parameter can be NULL if the data is not required.
-
-  * uint32_t nSize:
-
-    Pointer to a variable that specifies the size, in bytes, of the buffer pointed to by the pBuffer parameter. When the function returns, this variable contains the size of the data copied to pBuffer including the terminating null character.
+| Bit       | Description                                                  |
+| --------- | ------------------------------------------------------------ |
+| Bit 7     | BIOS Select<br />    - Single BIOS = 0<br />    - Fail-Safe-BIOS = 1 |
+| Bit 6     | ATX Mode<br />    - AT Mode = 0<br />    - ATX mode = 1      |
+| Bit 5     | reserved                                                   |
+| Bit 0 - 4 | Exception Code <br />**Note**: Code definition will be different for each hardware. please refer to [ADLINK offifical Website](https://www.adlinktech.com/) to seach for the Hardware User Manual or use **EApiGetExceptionDescription** |
 
 
 
-<br />
 <br />
 
 ```

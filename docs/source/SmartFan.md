@@ -39,10 +39,10 @@ Also provide two different operations to control PWM speed:
 
     For example,
 
-  |             | Level 1  | Level 2  | Level 3  | level 4  |
-  | ----------- | -------- | -------- | -------- | -------- |
+|             | Level 1  | Level 2  | Level 3  | level 4  |
+| ----------- | -------- | -------- | -------- | -------- |
 | Temperature | 30℃ (t1) | 40℃ (t2) | 50℃ (t3) | 80℃ (t4) |
-  | PWM         | 40 (p1)  | 50 (p2)  | 60 (p3)  | 100 (p4) |
+| PWM         | 40 (p1)  | 50 (p2)  | 60 (p3)  | 100 (p4) |
 
   <img src="SmartFan.assets/image-20200212182428581.png" alt="image-20200212182428581" style="zoom:67%;" />
 
