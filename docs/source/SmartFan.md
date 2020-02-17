@@ -18,7 +18,7 @@ Also provide two different operations to control PWM speed:
   | Temperature | 30℃ (t1) | 40℃ (t2) | 50℃ (t3) | 80℃ (t4) |
   | PWM         | 40 (p1)  | 50 (p2)  | 60 (p3)  | 100 (p4) |
 
-  <img src="source/SmartFan.assets/image-20200215141256241.png" alt="image-20200215141256241" style="zoom: 80%;" />
+  <img src="SmartFan.assets/image-20200215141256241.png" alt="image-20200215141256241" style="zoom: 80%;" />
 
 
 
@@ -44,7 +44,7 @@ Also provide two different operations to control PWM speed:
 | Temperature | 30℃ (t1) | 40℃ (t2) | 50℃ (t3) | 80℃ (t4) |
 | PWM         | 40 (p1)  | 50 (p2)  | 60 (p3)  | 100 (p4) |
 
-  <img src="source/SmartFan.assets/image-20200212182428581.png" alt="image-20200212182428581" style="zoom:67%;" />
+  <img src="SmartFan.assets/image-20200212182428581.png" alt="image-20200212182428581" style="zoom:67%;" />
 
 
 
@@ -57,7 +57,7 @@ Also provide two different operations to control PWM speed:
     | Temperature | **30℃ (t1)** | **30℃ (t2)** | **75℃ (t3)** | **75℃ (t4)** |
     | PWM         | 0 (p1)       | 30 (p2)      | **100 (p3)** | **100 (p4)** |
 
-<img src="source/SmartFan.assets/image-20200215144654075.png" alt="image-20200215144654075" style="zoom:67%;" />
+<img src="SmartFan.assets/image-20200215144654075.png" alt="image-20200215144654075" style="zoom:67%;" />
 
 
 
