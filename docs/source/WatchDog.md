@@ -38,7 +38,7 @@ Get the capabilities of **run-time watchdog**
 
   * uint32_t *pMaxDelay:
 
-    ​		Pointer to a buffer that receives maximum supported initial delay time of the watchdog timer 		in miliseconds.
+    Pointer to a buffer that receives maximum supported initial delay time of the watchdog timer 		in miliseconds.
 
   * uint32_t *pMaxEventTimeout:
 
