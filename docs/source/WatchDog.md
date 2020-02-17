@@ -92,7 +92,6 @@ reset the **run-time watchdog** timer
 
 
 <br />
-<br />
 
 
 ```
