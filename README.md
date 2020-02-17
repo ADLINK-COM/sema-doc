@@ -1,4 +1,4 @@
-## How to add/modify the SEMA online documentatation
+## How to add/modify the SEMA online documentation
 
 
 ### Basic rules
