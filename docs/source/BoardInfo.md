@@ -276,11 +276,11 @@ Get Error number history in the BMC. Failures in the Power Sequence are shown on
     Error Number. To get the detailed description, please use **EApiGetErrorNumberDescription**
     
   * uint8_t *Flags:
-   
+  
     Exception Code, selected BIOS and Power Mode ( see **EApiBoardGetValue** function and `SEMA_EAPI_ID_BOARD_BMC_FLAG` parameter to mention about the definition of Exception Flag). To get the detailed description from exception code, please use **EApiGetExceptionDescription**
-     
+    
     **Note**: Exception Code will be different for each hardware. please refer to [ADLINK official website](https://www.adlinktech.com/) to search for the Hardware User Manual to check your codes.
-     
+    
   * uint8_t *RestartEvent:
     
     System Restart Event (see **EApiBoardGetValue** function and `SEMA_EAPI_ID_BOARD_RESTART_EVENT` parameter to mention about the definition of Restart Event)
