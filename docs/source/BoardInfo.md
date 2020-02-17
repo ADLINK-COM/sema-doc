@@ -72,11 +72,12 @@ uint32_t EApiBoardGetValue(uint32_t Id, uint8_t* pData, uint32_t nSize)
   * uint32_t nSize:
     
     Pointer to a variable that specifies the size, in bytes, of the buffer pointed to by the pBuffer parameter. When the function returns, this variable contains the size of the data copied to pBuffer including the terminating null character.
-    
-    
-  
+
+
+
 
 **Note 1**: The following table describes the definition of Restart Event:
+
 | Code | Code Name   | Description                                                  |
 | ---- | ----------- | ------------------------------------------------------------ |
 | 0x00 | UNKNOWN     | Unknown reason of restart (shown only on first BMC power-up) |
@@ -93,10 +94,9 @@ uint32_t EApiBoardGetValue(uint32_t Id, uint8_t* pData, uint32_t nSize)
 | 0xC0 | WAKE_UP     | The system has received a wake event and resumes operation from a sleep state |
 
 
-
 **Note 2**: The following table describes the definition of BMC Capability Bits. it shows that which functions can be supported on your platform:
     -  When Bit value goes to **1**, it indicates **enabled**
-    -  When Bit value goes to **0**, it indicates **disabled**
+        -  When Bit value goes to **0**, it indicates **disabled**
 
 | Bit    | Description                                          |
 | ------ | ---------------------------------------------------- |
@@ -156,12 +156,10 @@ uint32_t EApiBoardGetValue(uint32_t Id, uint8_t* pData, uint32_t nSize)
 | --------- | ------------------------------------------------------------ |
 | Bit 7     | BIOS Select<br />    - Single BIOS = 0<br />    - Fail-Safe-BIOS = 1 |
 | Bit 6     | ATX Mode<br />    - AT Mode = 0<br />    - ATX mode = 1      |
-| Bit 5     | reserved                                                   |
-| Bit 0 - 4 | Exception Code <br />**Note**: Code definition will be different for each hardware. please refer to [ADLINK offifical Website](https://www.adlinktech.com/) to seach for the Hardware User Manual or use **EApiGetExceptionDescription** |
+| Bit 5     | reserved                                                     |
+| Bit 0 - 4 | Exception Code <br />**Note**: Code definition will be different for each hardware. please refer to <br />[ADLINK offifical Website](https://www.adlinktech.com/) to seach for the Hardware User Manual or <br />use **EApiGetExceptionDescription** |
 
 
-
-<br />
 
 ```
 uint32_t EApiBoardGetStringA(uint32_t Id, uint8_t* pData, uint32_t nSize)
@@ -205,9 +203,6 @@ uint32_t EApiBoardGetStringA(uint32_t Id, uint8_t* pData, uint32_t nSize)
     Pointer to a variable that specifies the size, in bytes, of the buffer pointed to by the pBuffer parameter. When the function returns, this variable contains the size of the data copied to pBuffer including the terminating null character
 
 
-<br />
-<br />
-
 
 ```
 uint32_t EApiBoardGetVoltageMonitor(uint8_t channel, uint32_t *pValue, char *pBuffer)
@@ -220,9 +215,7 @@ uint32_t EApiBoardGetVoltageMonitor(uint8_t channel, uint32_t *pValue, char *pBu
 * Parameters:
 
   * uint8_t channel:
-
     Select Channel number or Channel name as the first parameter
-
     | ID                               | Description             | Format  | Units      |
     | -------------------------------- | ----------------------- | ------- | ---------- |
     | SEMA_EAPI_ID_HWMON_VOLTAGE_AIN0  | voltage from channel 0  | &string | millivolts |
@@ -243,16 +236,10 @@ uint32_t EApiBoardGetVoltageMonitor(uint8_t channel, uint32_t *pValue, char *pBu
     | SEMA_EAPI_ID_HWMON_VOLTAGE_AIN15 | voltage from channel 15 | &string | millivolts |
 
   * uint32_t *pValue:
-
     Pointer to a buffer that receives the value's data
-
   * char *pBuffer:
-
     Pointer to a buffer that receives the description string
 
-
-<br />
-<br />
 
 ```
 uint32_t EApiBoardGetErrorLog(
@@ -272,19 +259,15 @@ uint32_t EApiBoardGetErrorLog(
 **Description**
 
 Get Error number history in the BMC. Failures in the Power Sequence are shown on the BMC status LED at the time where the issue occurs. The Error Log buffer stores those Power Sequence issues in an Error Log buffer. Beside of the displayed Error Code, the Error Log also stores information about the actual state and counters for better tracking of the issues. The latest entry in the Error Log Buffer is always found on position 0. The previous entry is found on position 1 and so on.
-
 * Parameters:
 
   * uint32_t  position:
-
     The pointer point to the log to be read
 
   * uint32_t *ErrorNumber:
-
     Error Number. To get the detailed description, please use **EApiGetErrorNumberDescription**
 
   * uint8_t  *Flags:
-
      Exception Code, selected BIOS and Power Mode ( see **EApiBoardGetValue** function and
      `SEMA_EAPI_ID_BOARD_BMC_FLAG` parameter to mention about the definition of Exception Flag). To get the detailed description from exception code, please use **EApiGetExceptionDescription**
 
