@@ -10,11 +10,12 @@
 * [Storage Access](source/Storage.md)
 
 
+
 **Note**:
- All sample codes are demonstrated under the following path:I
+ All sample codes are demonstrated under the following path:
+
 * Windows 10 64bit:  **c:\Program Files\Adlink\Application**
 
-  <img src="source/HowToInstall.assets/image-20200212165622460.png" alt="image-20200212165622460"  />
 
 
 * Linux: TDB
