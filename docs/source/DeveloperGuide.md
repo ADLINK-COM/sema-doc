@@ -11,13 +11,4 @@
 
 
 
-**Note**:
- All sample codes are demonstrated under the following path:
-
-* Windows 10 64bit:  **c:\Program Files\Adlink\Application**
-
-
-
-* Linux: TDB
-
 ​           
