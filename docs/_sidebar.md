@@ -4,7 +4,7 @@
 
 - [**How to Install SEMA**](source/HowToInstall.md)
 
-- [**How to  Use SEMA**](source/HowToUse.md)
+- [**How to  Use SEMA Utility**](source/HowToUse.md)
 
 - [**Developer's Guide**](source/DeveloperGuide.md)
   - [Board Information](source/BoardInfo.md)
