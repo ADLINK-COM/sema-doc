@@ -73,7 +73,6 @@ uint32_t EApiBoardGetValue(uint32_t Id, uint8_t* pData, uint32_t nSize)
 
     **Note 1**: The following table describes the definition of Restart Event:
 
-
     | Code | Code Name   | Description                                                  |
     | ---- | ----------- | ------------------------------------------------------------ |
     | 0x00 | UNKNOWN     | Unknown reason of restart (shown only on first BMC power-up) |
@@ -89,7 +88,7 @@ uint32_t EApiBoardGetValue(uint32_t Id, uint8_t* pData, uint32_t nSize)
     | 0xB0 | CRIT_TEMP   | The system was shut down by ACPI Watchdog (CPU reached critical temperature) |
     | 0xC0 | WAKE_UP     | The system has received a wake event and resumes operation from a sleep state |
 
-    <br />
+
 
     **Note 2**: The following table describes the definition of BMC Capability Bits. it shows that which functions can be supported on your platform:
 
@@ -132,7 +131,6 @@ uint32_t EApiBoardGetValue(uint32_t Id, uint8_t* pData, uint32_t nSize)
     | Bit 30 | Ext. I2C bus #4 available                            |
     | Bit 31 | BMC is from TIVA type                                |
 
-    <br />
 
     **Note 3**: The following table describes the definition of the extended BMC Capability Bits:
 
@@ -149,7 +147,7 @@ uint32_t EApiBoardGetValue(uint32_t Id, uint8_t* pData, uint32_t nSize)
     | Bit 40 | Parameter memory supported                           |
     | Bit 41 | Extended I2C registers for status and data supported |
 
-    <br />
+
 
     **Note 4**: The following table describes the definition of the BMC Flag/Status:
 
