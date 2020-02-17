@@ -16,7 +16,7 @@ Running the installwe which will be automatically installed SMBus driver, EAPI l
 
 
 2. Click "Next" Button to start to install
-<img src="sHowtoInstall.assets/Capture2.PNG" alt="Capture2" style="zoom:80%;" />
+<img src="HowtoInstall.assets/Capture2.PNG" alt="Capture2" style="zoom:80%;" />
 
 3. Until you see "Finish" button for the successful installation.
 <img src="HowtoInstall.assets/Capture4.PNG" alt="Capture4" style="zoom:80%;" />
