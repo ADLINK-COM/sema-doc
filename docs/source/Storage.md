@@ -35,8 +35,7 @@ Get the capabilities of the selected storage area
 
 
 
-<br />
-<br />
+ <br />
 
 
 ```
@@ -82,8 +81,7 @@ Read data to the selected user data area
 
 
 
-<br />
-<br />
+ <br />
 
 ```
 uint32_t EApiStorageAreaWrite(

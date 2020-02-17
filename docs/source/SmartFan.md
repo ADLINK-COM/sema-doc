@@ -7,68 +7,56 @@ Also provide two different operations to control PWM speed:
 
 * Operation of SMART FAN Mode:  
 
-  1. please use **EApiSmartFanSetMode** function with `SEMA_FAN_MODE_AUTO` parameter.
+  please use **EApiSmartFanSetMode** function with `SEMA_FAN_MODE_AUTO` parameter and provides 4 levels of temerpature & 4 levels of PWM are configured to get the below ladder chart:
 
-  2. 4 levels of temerpature & 4 levels of PWM are configured to get the below ladder chart:
-
-  ​        For example:
+  For example:
 
   |             | Level 1  | Level 2  | Level 3  | level 4  |
-  | ----------- | -------- | -------- | -------- | -------- |
+| ----------- | -------- | -------- | -------- | -------- |
   | Temperature | 30℃ (t1) | 40℃ (t2) | 50℃ (t3) | 80℃ (t4) |
   | PWM         | 40 (p1)  | 50 (p2)  | 60 (p3)  | 100 (p4) |
+  
+   
 
-  <img src="SmartFan.assets/image-20200215141256241.png" alt="image-20200215141256241" style="zoom: 80%;" />
-
-
-
+  ​                                      	![image-20200215141241146](SmartFan.assets/image-20200215141241146.png)
+  
 * Operation of SOFT FAN Mode:
 
   Please use BMC capability command to check Bit 34 & Bit 39 to see whic design of SOFT FAN are using on your platform.
 
   | Bit 34 | Bit 39 | FAN Mode               | Type                                                         |
   | ------ | ------ | ---------------------- | ------------------------------------------------------------ |
-  | 0      | 1      | SEMA_FAN_MODE_SOFT_FAN | Provide 4 level of temperature & PWM to get the below linear **chart 1** |
-  | 1      | 0      | SEMA_FAN_MODE_AUTO     | provide 2 level of temperature & PWM to get the below linear **chart 2** |
+  | 0      | 1      | SEMA_FAN_MODE_SOFT_FAN | 4 level of temperature & PWM as the below linear **chart 1** |
+  | 1      | 0      | SEMA_FAN_MODE_AUTO     | 2 level of temperature & PWM as the below linear **chart 2** |
   | 0      | 0      | Not support            | Not support                                                  |
   | 1      | 1      | Not support            | Not support                                                  |
 
-
-
-  * Linear chart 1 with 4 level configuration:
-
+  1. Linear chart 1 with 4 level of temperature & PWM configuration:
+  
     For example,
-
-|             | Level 1  | Level 2  | Level 3  | level 4  |
+  
+    |             | Level 1  | Level 2  | Level 3  | level 4  |
 | ----------- | -------- | -------- | -------- | -------- |
 | Temperature | 30℃ (t1) | 40℃ (t2) | 50℃ (t3) | 80℃ (t4) |
-| PWM         | 40 (p1)  | 50 (p2)  | 60 (p3)  | 100 (p4) |
+ PWM         | 40 (p1)  | 50 (p2)  | 60 (p3)  | 100 (p4) |
+      
+      ![image-20200120180638356](SmartFan.assets/image-20200120180638356.png)
 
-  <img src="SmartFan.assets/image-20200212182428581.png" alt="image-20200212182428581" style="zoom:67%;" />
-
-
-
-  * Linear chart 2 with 2 level configuration:
-
+  2. Linear chart 2 with 2 level of temperature & PWM configuration:
+    
     For exmple:  **(The Rule is  t1 = t2; t3 = t4; p3 = p4)**
-
-    |             | Level 1      | Level 2      | Level 3      | level 4      |
-  | ----------- | ------------ | ------------ | ------------ | ------------ |
+  
+    |             | Level 1      | Level 2      | Level 3      | level 4     |
+| ----------- | ------------ | ------------ | ------------ | ------------ |
     | Temperature | **30℃ (t1)** | **30℃ (t2)** | **75℃ (t3)** | **75℃ (t4)** |
     | PWM         | 0 (p1)       | 30 (p2)      | **100 (p3)** | **100 (p4)** |
-
-<img src="SmartFan.assets/image-20200215144654075.png" alt="image-20200215144654075" style="zoom:67%;" />
-
-
+  
+    ![image-20200215144606569](SmartFan.assets/image-20200215144606569.png)
 
 
-
-
+<br />
 #### List of SEMA EAPI
 
-
-<br />
-<br />
 
 ```
 uint32_t uint32_t EApiSmartFanSetTempSetpoints(uint32_t FanID, uint32_t Level1, uint32_t Level2, uint32_t Level3, uint32_t Level4)
@@ -107,9 +95,7 @@ Set temperature levels ( variable type is signed integer / Degree Celsius)
 
     ​		 Configure the fourth level of temperature (t4)
 
-
-<br />
-<br />
+<br /> 
 
 ```
 uint32_t uint32_t EApiSmartFanGetTempSetpoints(uint32_t FanId, uint32_t* pLevel1, uint32_t* pLevel2, uint32_t* pLevel3, uint32_t* pLevel4)
@@ -148,9 +134,7 @@ Get temperature levels
 
     ​		 Pointer to a buffer that receives the current temperature level (t4)
 
-
-<br />
-<br />
+<br /> 
 
 ```
 uint32_t uint32_t EApiSmartFanSetPWMSetpoints(uint32_t FanID, uint32_t Level1, uint32_t Level2, uint32_t Level3, uint32_t Level4)
@@ -191,7 +175,6 @@ Set PWM levels ( Range is **0 ~100** )
 
 
 <br />
-<br />
 
 ```
 uint32_t uint32_t EApiSmartFanGetTempSetpoints(uint32_t FanId, uint32_t* pLevel1, uint32_t* pLevel2, uint32_t* pLevel3, uint32_t* pLevel4)
@@ -230,9 +213,7 @@ Get PWM levels ( Range is **0 ~100** )
 
     ​		 Pointer to a buffer that receives the current PWM level (p4)
 
-
-<br />
-<br />
+<br /> 
 
 ```
 uint32_t uint32_t EApiSmartFanSetMode(uint32_t FanId, uint8_t pFanMode)
@@ -268,9 +249,7 @@ Set FAN Mode
 
 
 
-
-<br />
-<br />
+<br /> 
 
 ```
 uint32_t uint32_t EApiSmartFanGetMode(uint32_t FanId, uint8_t* pFanMode)
@@ -307,8 +286,7 @@ Get FAN Mode
 
 
 
-<br />
-<br />
+ <br />
 
 ```
 uint32_t uint32_t EApiSmartFanGetTempSrc(uint32_t FanId, uint8_t* pTempSrc)
@@ -342,8 +320,7 @@ Get the temperature source for the specified FAN ID. SMART FAN will be triggered
 
 
 
-<br />
-<br />
+ <br />
 
 ```
 uint32_t uint32_t EApiSmartFanSetTempSrc(uint32_t FanId, uint8_t pTempSrc)

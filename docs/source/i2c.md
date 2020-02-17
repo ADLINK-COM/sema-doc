@@ -67,8 +67,7 @@ Probes I2C address to test I2C Device present
 
 
 
-<br />
-<br />
+ <br />
 
 
 ```
@@ -107,8 +106,7 @@ Gets current status of the I2C bus.
 
 
 
-<br />
-<br />
+ <br />
 
 ```
 uint32_t EApiI2CReadTransfer(
@@ -158,8 +156,7 @@ Reads from a specific register in the selected I2C device. Reads from I2C device
 
 
 
-<br />
-<br />
+<br /> 
 
 
 ```
@@ -206,8 +203,7 @@ Write to a specific register in the selected I2C device. Writes to an I2C device
 
 
 
-<br />
-<br />
+ <br />
 
 ```
 uint32_t EApiI2CWriteReadRaw(

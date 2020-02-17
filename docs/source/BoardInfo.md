@@ -11,8 +11,10 @@ Provides an interface to control or get the board's information, including:
 
 #### List of SEMA EAPI
 
+
+
 ```
-uint32_t EApiBoardGetValue(uint32_t Id, uint8_t* pData, uint32_t nSize)
+uint32_t EApiBoardGetValue(uint32_t Id, uint8_t *pData, uint32_t nSize)
 ```
 
 **Description**
@@ -66,7 +68,8 @@ uint32_t EApiBoardGetValue(uint32_t Id, uint8_t* pData, uint32_t nSize)
     | SEMA_EAPI_ID_BOARD_BMC_STATUS              | status of the BMC                                |                             |
     | SEMA_EAPI_ID_BOARD_IO_CURRENT              | IO current                                       |                             |
 
-  * uint8_t* pData:
+  * uint8_t *pData:
+    
     Pointer to a buffer that receives the value's data. This  parameter can be NULL if the data is not required.
     
   * uint32_t nSize:
@@ -152,17 +155,17 @@ uint32_t EApiBoardGetValue(uint32_t Id, uint8_t* pData, uint32_t nSize)
 
 **Note 4**: The following table describes the definition of the BMC Flag/Status:
 
-| Bit       | Description                                                  |
-| --------- | ------------------------------------------------------------ |
-| Bit 7     | BIOS Select<br />    - Single BIOS = 0<br />    - Fail-Safe-BIOS = 1 |
-| Bit 6     | ATX Mode<br />    - AT Mode = 0<br />    - ATX mode = 1      |
-| Bit 5     | reserved                                                     |
-| Bit 0 - 4 | Exception Code <br />**Note**: Code definition will be different for each hardware. please refer to <br />[ADLINK offifical Website](https://www.adlinktech.com/) to seach for the Hardware User Manual or <br />use **EApiGetExceptionDescription** |
+|    Bit    | Description                                                  |
+| :-------: | ------------------------------------------------------------ |
+|   Bit 7   | BIOS Select<br />    - Single BIOS = 0<br />    - Fail-Safe-BIOS = 1 |
+|   Bit 6   | ATX Mode<br />    - AT Mode = 0<br />    - ATX mode = 1      |
+|   Bit 5   | reserved                                                     |
+| Bit 0 - 4 | Exception Code <br />**Note**: Code definition will be different for each hardware. please refer to [ADLINK offifical Website](https://www.adlinktech.com/) to seach for the Hardware User Manual or use **EApiGetExceptionDescription** |
 
-
+<br />
 
 ```
-uint32_t EApiBoardGetStringA(uint32_t Id, uint8_t* pData, uint32_t nSize)
+uint32_t EApiBoardGetStringA(uint32_t Id, uint8_t *pData, uint32_t nSize)
 ```
 
 **Description**
@@ -194,7 +197,7 @@ uint32_t EApiBoardGetStringA(uint32_t Id, uint8_t* pData, uint32_t nSize)
     | SEMA_EAPI_ID_BOARD_2ND_HW_REVISION_STR     | 2nd HW revision string              | String |
     | SEMA_EAPI_ID_BOARD_2ND_SERIAL_STR          | 2nd HW serial string                | String |
 
-  * uint8_t* pData:
+  * uint8_t *pData:
 
     Pointer to a buffer that receives the value's data. This  parameter can be NULL if the data is not required.
 
@@ -202,7 +205,7 @@ uint32_t EApiBoardGetStringA(uint32_t Id, uint8_t* pData, uint32_t nSize)
 
     Pointer to a variable that specifies the size, in bytes, of the buffer pointed to by the pBuffer parameter. When the function returns, this variable contains the size of the data copied to pBuffer including the terminating null character
 
-
+<br />
 
 ```
 uint32_t EApiBoardGetVoltageMonitor(uint8_t channel, uint32_t *pValue, char *pBuffer)
@@ -236,8 +239,11 @@ uint32_t EApiBoardGetVoltageMonitor(uint8_t channel, uint32_t *pValue, char *pBu
     | SEMA_EAPI_ID_HWMON_VOLTAGE_AIN15 | voltage from channel 15 | &string | millivolts |
 
   * uint32_t *pValue:
+    
     Pointer to a buffer that receives the value's data
+    
   * char *pBuffer:
+    
     Pointer to a buffer that receives the description string
 
 
@@ -261,50 +267,49 @@ uint32_t EApiBoardGetErrorLog(
 Get Error number history in the BMC. Failures in the Power Sequence are shown on the BMC status LED at the time where the issue occurs. The Error Log buffer stores those Power Sequence issues in an Error Log buffer. Beside of the displayed Error Code, the Error Log also stores information about the actual state and counters for better tracking of the issues. The latest entry in the Error Log Buffer is always found on position 0. The previous entry is found on position 1 and so on.
 * Parameters:
 
-  * uint32_t  position:
+  * uint32_t  position: 
+
     The pointer point to the log to be read
-
+    
   * uint32_t *ErrorNumber:
+  
     Error Number. To get the detailed description, please use **EApiGetErrorNumberDescription**
-
-  * uint8_t  *Flags:
-     Exception Code, selected BIOS and Power Mode ( see **EApiBoardGetValue** function and
-     `SEMA_EAPI_ID_BOARD_BMC_FLAG` parameter to mention about the definition of Exception Flag). To get the detailed description from exception code, please use **EApiGetExceptionDescription**
-
-     **Note**: Exception Code will be different for each hardware. please refer to [ADLINK official website](https://www.adlinktech.com/) to search for the Hardware User Manual to check your codes.
-
-  * uint8_t  *RestartEvent:
-
+    
+  * uint8_t *Flags:
+   
+    Exception Code, selected BIOS and Power Mode ( see **EApiBoardGetValue** function and `SEMA_EAPI_ID_BOARD_BMC_FLAG` parameter to mention about the definition of Exception Flag). To get the detailed description from exception code, please use **EApiGetExceptionDescription**
+     
+    **Note**: Exception Code will be different for each hardware. please refer to [ADLINK official website](https://www.adlinktech.com/) to search for the Hardware User Manual to check your codes.
+     
+  * uint8_t *RestartEvent:
+    
     System Restart Event (see **EApiBoardGetValue** function and `SEMA_EAPI_ID_BOARD_RESTART_EVENT` parameter to mention about the definition of Restart Event)
-
+  
   * uint32_t *PwrCycles:
-
+    
     Power Cycles Counter
-
+    
   * uint32_t *Bootcount:
     Boot Counter
-
+    
   * uint32_t *Time:
-
+    
     Ontime Counter (seconds)
-
+  
   * uint16_t *Status:
-
+    
     Status information from BMC status command
-
+    
   * signed char *CPUtemp:
-
+    
     Current CPU temperature (if available)
-
+    
   * signed char *Boardtemp:
-
+    
     Current Board temperature (if available)
 
 
 
-
-
-<br />
 <br />
 
 
@@ -332,13 +337,13 @@ Get Error number history in the BMC. Failures in the Power Sequence are shown on
 
     Error Number. To get the detailed description, please use **EApiGetErrorNumberDescription**
 
-  * uint8_t  *Flags:
+  * uint8_t *Flags:
 
     Exception Code, selected BIOS and Power Mode ( see **EApiBoardGetValue** function and 		`SEMA_EAPI_ID_BOARD_BMC_FLAG` parameter) To get the detailed description from exception 		code, please use `SemaEApiBoardGetExceptionDescription`
 
     **Note**: Exception Code will be different for the platforms. please refer to [ADLINK official website](https://www.adlinktech.com/) to search for the Hardware User Manual to check your codes.
 
-  * uint8_t  *RestartEvent:
+  * uint8_t *RestartEvent:
 
     System Restart Event (see **EApiBoardGetValue** function and `SEMA_EAPI_ID_BOARD_RESTART_EVENT` parameter to mention about the definition of Restart Event)
 
@@ -368,9 +373,6 @@ Get Error number history in the BMC. Failures in the Power Sequence are shown on
 
 
 
-<br />
-<br />
-
 ```
 uint32_t EApiGetErrorNumberDescription(uint32_t ErrorNum, uint8_t* pBuffer)
 ```
@@ -389,9 +391,6 @@ Get text information of the Error number in the error log (get from **EApiBoardG
 
     The description of error number.
 
-
-
-<br />
 <br />
 
 ```

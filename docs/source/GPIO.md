@@ -10,9 +10,7 @@ Provides a set of functions to control GPIO pins.
 1. Only supports the specific exnternal GPIO controller : **PCA9535 I/O expander on COM/SMARC Module**
 2. For Linux users, PCA9535 kernel driver is ready on your Linux. Please use GPIO sysfs Interface to access pins. We don't provide any SEMA GPIO EAPI function on Linux environment.
 
-
-<br />
-<br />
+<br /> 
 
 
 ```
@@ -64,9 +62,7 @@ Reads the current configuration of the selected GPIO ports
 
 
 
-
-<br />
-<br />
+<br /> 
 
 
 ```
@@ -118,8 +114,7 @@ Read the from GPIO ports
 
 
 
-<br />
-<br />
+<br /> 
 
 
 

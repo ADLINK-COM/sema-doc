@@ -76,8 +76,6 @@ Start to **run-time watchdog** timer. To reset timer value, timer must be stopee
     ​		Watchdog timeout interval in milliseconds to trigger a reset.
 
 
-
-<br />
 <br />
 
 
@@ -108,10 +106,6 @@ Stops the operation of the **run-time watchdog** timer
 * Parameters: N/A
 
 
-
-
-
-<br />
 <br />
 
 
@@ -130,10 +124,6 @@ enable the operation of the **power-up watchdog timer**
     Watchdog timeout interval in milliseconds to trigger a reset.
 
 
-
-
-
-<br />
 <br />
 
 
