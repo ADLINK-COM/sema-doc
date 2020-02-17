@@ -20,9 +20,7 @@ uint32_t EApiBoardGetValue(uint32_t Id, uint8_t* pData, uint32_t nSize)
    Information about the hardware platform.
 
 * Parameters:
-
   * uint32_t Id:
-
     Select ID for the first parameter:
 
     | ID                                         | Description                                      | Units                       |
@@ -70,8 +68,7 @@ uint32_t EApiBoardGetValue(uint32_t Id, uint8_t* pData, uint32_t nSize)
 
 
 
-
-    **Note 1**: The following table describes the definition of Restart Event:
+**Note 1**: The following table describes the definition of Restart Event:
 
     | Code | Code Name   | Description                                                  |
     | ---- | ----------- | ------------------------------------------------------------ |
