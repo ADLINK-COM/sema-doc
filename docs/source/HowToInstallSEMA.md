@@ -11,17 +11,18 @@ Running the installwe which will be automatically installed SMBus driver, EAPI l
 
 1. After download, please execute the installer file and click "Next" button
 
-![install1](HowToInstallSEMA.assets/install1-1582257539251.png)
+    ![install1](HowToInstallSEMA.assets/install1-1582257539251.png)
 
-1. Click "Next" Button to start to install 
 
-    
+2. Click "Next" Button to start to install 
 
-2. Until you see "Finish" button for the successful installation.
+    ![capture2](HowToInstallSEMA.assets/capture2.png)
 
-    
+3. Until you see "Finish" button for the successful installation
 
-3. You can see the installed files/folders under "**c:\Program Files\Adlink**"
+    ![capture3](HowToInstallSEMA.assets/capture3-1582261215293.png)
+
+4. You can see the installed files/folders under "**c:\Program Files\Adlink**"
 
   * **Appliction** folder: includes EAPI.dll, EAPI.lib, semauti.exe, exmple codes.
   * **SEMA_SMBus_4** folder: includes Windows SMBus drivers (sys, inf files)
@@ -32,4 +33,3 @@ Running the installwe which will be automatically installed SMBus driver, EAPI l
 
   TBD
 
-![install1](HowToInstallSEMA.assets/install1.png)
