@@ -26,7 +26,7 @@
 
 |               Windows SEMA 4.0                |              Linux SEMA 4.0  (TBD)              |
 | :-------------------------------------------: | :---------------------------------------------: |
-| ![](Intro.assets/sema_highlevel_arch_win.png) | ![](Intro.assets/sema_highlevel_arch_linux.png) |
+| ![](source/Intro.assets/sema_highlevel_arch_win.png) | ![](source/Intro.assets/sema_highlevel_arch_linux.png) |
 
   
 
