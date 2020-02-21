@@ -2,7 +2,7 @@
 
 - [**Introduction**](source/Intro.md)
 
-- [**How to Install SEMA**](source/HowToInstall.md)
+- [**How to Install SEMA**](source/HowToInstallSEMA.md)
 
 - [**How to  Use SEMA Utility**](source/HowToUse.md)
 
