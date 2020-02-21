@@ -2,7 +2,7 @@
 
 
 
-|                            Module                            | Description                                                  |
+|                          **Module**                          | **Description**                                              |
 | :----------------------------------------------------------: | ------------------------------------------------------------ |
 | <img src="https://camo.githubusercontent.com/86f946d4905c324e085580aa9dae1c3fb2f47b85/68747470733a2f2f692e696d6775722e636f6d2f4c54624f7748652e706e67" alt="img" style="zoom: 33%;" /> | **Express-CF/CFE** ([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType6/Express-CF_CFE?lang=en))<br />**COM Express® Basic Size Type 6 Module** with Up to Hexacore 8th Gen Intel Core™ 8000 series and Intel Xeon® Processors |
 | <img src="https://camo.githubusercontent.com/a1dadd0056f725770c6ae120af619791231a5d26/68747470733a2f2f692e696d6775722e636f6d2f4d4f4f6333744c2e706e67" alt="img" style="zoom:33%;" /> | **Express-KL/KLE** ([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType6/Express-KL_KLE?lang=en))<br />**COM Express Basic Size Type 6 Module** with 7th Gen Intel® Core™ 7000 series and Intel® Xeon® Processors |
