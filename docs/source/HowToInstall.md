@@ -9,7 +9,7 @@ Please go to [here](https://hq0epm0west0us0storage.blob.core.windows.net/public/
 Running the installwe which will be automatically installed SMBus driver, EAPI library and command line utility.
 1. After download, please execute the installer file and click "Next" button
 
-   ![Capture1](HowToInstall.assets/install1.png)
+   ![Install1](HowToInstall.assets/install1.png)
 
 2. Click "Next" Button to start to install 
 
