@@ -31,11 +31,11 @@ Running the installwe which will be automatically installed SMBus driver, EAPI l
 
 ### Linux
 
-  ## Getting Started
+
 
 Follow below instructions to build and install the SEMA utility on target machine.
 
-### Prerequisites
+#### Prerequisites
 
 Install build-essential package to install all tools used along with make. Install git, hexer and i2c-tools.
 
@@ -43,7 +43,7 @@ Install build-essential package to install all tools used along with make. Insta
 sudo apt install build-essential git hexer i2c-tools
 ```
 
-### Build and Install
+#### Build and Install
 
 Download the source code from ADLINK git repository
 
