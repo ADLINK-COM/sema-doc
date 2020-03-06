@@ -100,7 +100,5 @@ echo pca9535 0x20 > /sys/bus/i2c/devices/i2c-12/new_device
 
 **Note**:Here i2c-12 is used, since SMBus is located at bus 12. `0x20` is GPIO device slave address. Please refer the below screenshot to know the i2c bus number and GPIO device address.
 
-
-
-
+![imag2](HowToInstallSEMA.assets/imag2.png)
 
