@@ -5,7 +5,45 @@ Provides a set of functions to control GPIO pins.
 
 
 
-#### List of SEMA EAPI
+#### List of sys Interface
+
+* To export the GPIO pin: (N should replace with gpio chip base number)
+
+  ```
+  echo N > /sys/class/gpio/export
+  ```
+
+* To read the direction of a pin
+
+ ```
+cat /sys/class/gpio/gpio251/direction
+ ```
+
+* To write the direction of a pin
+
+ ```
+echo in > /sys/class/gpio/gpio251/direction
+ ```
+
+* To read the value of a pin
+
+ ```
+cat /sys/class/gpio/gpio251/value
+ ```
+
+* To write the value of a pin
+
+ ```
+echo 1 > /sys/class/gpio/gpio251/value
+ ```
+
+
+
+<br />
+
+
+
+#### List of SEMA EAPI (Only for Windows)
 
 1. Only supports the specific exnternal GPIO controller : **PCA9535 I/O expander on COM/SMARC Module**
 2. For Linux users, PCA9535 kernel driver is ready on your Linux. Please use GPIO sysfs Interface to access pins. We don't provide any SEMA GPIO EAPI function on Linux environment.

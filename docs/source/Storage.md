@@ -5,7 +5,41 @@ Support to access 1K-Bytes EEPROM on BMC device.
 
 
 
-#### List of SEMA EAPI
+
+
+#### List of Sys Interface 
+
+* To get the storage capabilities
+
+  ```
+  cat /sys/bus/platform/devices/adl-bmc-nvmem/capabilities/nvmemcap
+  ```
+
+* To read the storage area,
+
+  ```
+  hexdump /sys/bus/nvmem/devices/<nvmem index>/nvmem
+  ```
+
+  For example: **hexdump /sys/bus/nvmem/devices/nvmem544/nvmem**
+
+* To write the storage area
+
+  ```
+  hexer /sys/bus/nvmem/devices/<nvmem index>/nvmem
+  ```
+
+  For example:**$ hexer /sys/bus/nvmem/devices/nvmem544/nvmem**
+
+  **Note**: Hexer will open a nvmem file in editor mode. To edit the data press **r (replace**) and enter new data then press escape and **:wq** to save. Then read the same file using hexdump to check saved changes.
+
+
+
+<br />
+
+
+
+#### List of SEMA EAPI (Support Windows & Linux)
 
 ```
 uint32_t EApiStorageCap(uint32_t Id, uint32_t* pStorageSize, uint32_t* pBlockLength)

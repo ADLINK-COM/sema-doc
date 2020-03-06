@@ -9,9 +9,181 @@ Provides an interface to control or get the board's information, including:
 
 
 
-#### List of SEMA EAPI
+#### List of Sys Interface 
+
+* To get the board manufacturer name:
+
+  ```
+  cat /sys/bus/platform/devices/adl-bmc-  boardinfo/information/manufacturer_name
+  ```
+
+* To get the board name
+
+  ```
+  cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/board_name
+  ```
+
+* To get the board serial number
+
+  ```
+  cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/serial_number
+  ```
+
+* To get the board BIOS version
+
+  ```
+  cat /sys/class/dmi/id/bios_version
+  ```
+
+* To get the board hardware revision
+
+  ```
+  cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/hw_rev
+  ```
+
+* To get the board bootloader version information
+
+  ```
+  cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/bmc_boot_version
+  ```
+
+* To get the BMC application version information
+
+  ```
+  cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/application_version
+  ```
+
+* To get the last system restart event information
+
+  ```
+  cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/restart_event_str
+  ```
+
+* To get the board last repair date
+
+  ```
+  cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/last_repair_date
+  ```
+
+* To get the board manufactured date
+
+  ```
+  cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/manufactured_date
+  ```
+
+* To get the board MAC id
+
+  ```
+  cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/mac_address
+  ```
+
+* To get the board second hardware revision information
+
+  ```
+  cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/second_hw_rev
+  ```
+
+* To get the board second serial number
+
+  ```
+  cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/second_ser_num
+  ```
+
+* To get the board boot count
+
+  ```
+  cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/boot_counter_val
+  ```
+
+* To get the board on time minutes
+
+  ```
+  cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/total_up_time
+  ```
+
+* To get the board on time seconds
+
+  ```
+cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/power_up_time
+  ```
+  
+* To get the board power cycles
+
+  ```
+cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/power_cycles
+  ```
+  
+* To get the board restart event
+
+  ```
+cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/restart_event
+  ```
+  
+* To get the BMC capabilities
+
+  ```
+cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/capabilities
+  ```
+  
+* To get the BMC extended capabilities
+
+  ```
+  cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/capabilities_ext
+  ```
+  
+* To get the BMC flags
+
+  ```
+cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/bmc_flags
+  ```
+  
+* To get the BMC status
+
+  ```
+cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/bmc_status
+  ```
+  
+* To get the board main power current
+
+  ```
+cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/main_current 
+  ```
+
+* To get current position error log
+
+  ```
+  cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/cur_pos_error_log
+  ```
+
+* To set position (read pointer) and get error log immediately
+
+  ```
+  echo 1 > /sys/bus/platform/devices/adl-bmc-boardinfo/information/error_log
+  ```
+  
+* To set error number and get error number description immediately
+  
+  ```
+  echo 88 > /sys/bus/platform/devices/adl-bmc-boardinfo/information/err_num_des
+  cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/err_num_des
+  ```
+  
+  **Note***: Here 88 is one of the error number showed in error log. It may be change from platform to platform.
+
+* To set exception code and get exception description
+
+  ```
+  echo 0 > /sys/bus/platform/devices/adl-bmc-boardinfo/information/exc_des
+  cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/exc_des
+  ```
+
+  
+
+<br>
 
 
+
+#### List of SEMA EAPI (Support Windows & Linux)
 
 ```
 uint32_t EApiBoardGetValue(uint32_t Id, uint8_t *pData, uint32_t nSize)
@@ -164,9 +336,9 @@ uint32_t EApiBoardGetValue(uint32_t Id, uint8_t *pData, uint32_t nSize)
 
 <br />
 
-```
+  ```
 uint32_t EApiBoardGetStringA(uint32_t Id, uint8_t *pData, uint32_t nSize)
-```
+  ```
 
 **Description**
 
@@ -410,3 +582,11 @@ Get text information of the Exception Code
   * uint8_t* pBuffer:
 
     The description of error number
+
+```
+
+```
+
+```
+
+```

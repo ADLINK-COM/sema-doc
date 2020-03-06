@@ -16,19 +16,87 @@ Support two watchdog controls of the board. If the watchdog begins and reaches t
 
   **Note:** Reboot system is a must after using SEMA function to enable power-up watchdog.
 
+<br />
+
+
+
+#### List of Sys Interface 
+
+* To start the watchdog
+  ```
+  echo 1 > /dev/watchdog0
+  ```
+  
+* To stop the watchdog
+  ```
+  **echo “V” > /dev/watchdog0
+  ```
+  
+* To trigger / ping the watchdog
+  ```
+  wdogtest –ping
+  ```
+  
+* To update the watchdog timeout value
+
+  To set the watchdog timeout out value, use the following format:
+  ```
+  wdogtest –timeout=<time in seconds>
+  ```
+  
+  The example below sets the watchdog timeout value as 20 seconds.
+  ```
+  wdogtest –timeout=20
+  ```
+
+* To get the information about the watchdog state
+  ```
+  cat /sys/class/watchdog/watchdog0/state
+  ```
+* To get the current watchdog timeout value
+  ```
+  cat /sys/class/watchdog/watchdog0/timeout
+  ```
+* To get minimum/maximum watchdog timeout value
+  ```
+  /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/wdt_min_timeout
+  /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/wdt_max_timeout
+  ```
+  
+* To start / update the power up watchdog timer value
+  To update timeout out value, use the following format:
+  ```
+  echo  > /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/PwrUpWDog
+  ```
+  The example below sets the power up watchdog timer timeout value as 1000 seconds.      
+  ```
+  echo 1000 > /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/PwrUpWDog
+  ```
+  
+* To get the power up watchdog timer value
+  ```
+  cat /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/PwrUpWDog
+  ```
+
+* To stop the power up watchdog timer
+  ```
+  echo 0 > /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/PwrUpWDog
+  ```
+
+
 
 <br />
 
-#### List of SEMA EAPI
+#### List of SEMA EAPI (Support Windows & Linux)
 
 
-```
+  ```
 uint32_t EApiWDogGetCap(
     uint32_t *pMaxDelay,
     uint32_t *pMaxEventTimeout,
     uint32_t* Resetvalue
 )
-```
+  ```
 
 **Description**
 
@@ -135,3 +203,7 @@ uint32_t EApiPwrUpWDogStop()
 Disable the operation of the **power-up watchdog** timer (disable)
 
 * Parameters: N/A
+
+```
+
+```

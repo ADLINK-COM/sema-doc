@@ -7,7 +7,53 @@ Support backlight brightness and backlight enable
 
 
 
-#### List of SEMA EAPI
+#### List of sys Interface
+
+
+
+* To get the current Backlight Enable State
+
+  ```
+  cat /sys/class/backlight/adl-bmc-bklight/bl_power
+  ```
+
+* To Set the current Backlight Enable State to either ON / OFF
+
+  ```
+  echo  > /sys/class/backlight/adl-bmc-bklight/bl_power
+  ```
+
+  For Example, 
+
+  To enable the backlight: **$ echo 1 > /sys/class/backlight/adl-bmc-bklight/bl_power**
+
+  To Disable the backlight: **$ echo 0 > /sys/class/backlight/adl-bmc-bklight/bl_power**
+
+ 
+
+* To get the current Backlight Brightness level
+
+  ```
+  cat /sys/class/backlight/adl-bmc-bklight/actual_brightness
+  ```
+
+* To Set the current Backlight brightness level
+
+  ```
+  echo > /sys/class/backlight/adl-bmc-bklight/brightness
+  ```
+
+  For Example, to set the brightness level of 78: **$ echo 78 > /sys/class/backlight/adl-bmc-bklight/brightness**
+
+
+
+
+
+<br />
+
+
+
+#### List of SEMA EAPI (Support Windows & Linux)
 
 ```
 uint32_t EApiVgaGetBacklightEnable(uint32_t PanelId, uint32_t *pEnable)

@@ -9,7 +9,7 @@ Provide an interface to access I2C devices. Please refer to the Hardware User Ma
 
 
 
-#### List of SEMA EAPI
+#### List of SEMA EAPI (Only for Windows)
 
 ```
 uint32_t EApiI2CGetBusCap(uint32_t Id, uint32_t *pMaxBlkLen)
