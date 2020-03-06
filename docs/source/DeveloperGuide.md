@@ -1,4 +1,4 @@
-### List of sys Interface (only for Linux use)
+### List of sys Interface (only for Linux)
 
 * [Board Information](source/BoardInfo.md#list-of-sys-interface)
 * [WatchDog control](source/WatchDog.md#list-of-sys-interface)

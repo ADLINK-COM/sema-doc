@@ -78,7 +78,7 @@
   --------------------------
 
   * **Windows OS**: Windows 10 64bit
-  * **Linux OS**: TBD (Provide by end of Feb. 2020)
-  * **Yocto Linux**: TBD (Provide by end of Feb. 2020)
+  * **Linux OS**: kernel 4.4 or above
+  * **Yocto Linux**: TBD (provide by end of April. 2020)
   * **VxWorks (by request)**
   * **QNX (by request)**
