@@ -55,6 +55,11 @@ Change directory to sema-linux and run make.
 
 ```
 cd sema-linux
+```
+
+Run make
+
+```
 sudo make
 ```
 
@@ -63,4 +68,39 @@ To install driver modules, dynamic library and utilities into root file system.
 ```
 sudo make install
 ```
+
+To load all of drivers
+
+```
+sudo modprobe i2c_i801 adl-bmc adl-bmc-boardinfo adl-bmc-vm adl-bmc-wdt adl-bmc-fan adl-bmc-nvmem adl-bmc-bklight
+```
+
+After installed, these files will be located at the following path
+
+| File       | Description                                           |
+| ---------- | ----------------------------------------------------- |
+| libsema.so | EAPI Libarary is located under `/usr/lib/`            |
+| semautil   | SEMA Command Line utility is located unde `/usr/bin/` |
+
+
+
+#### Install native GPIO driver
+
+Load native PCA9535 GPIO driver
+
+```
+sudo modprobe gpio-pca953x
+```
+
+After loading kernel driver, configure the GPIO device with the following command.
+
+```
+echo pca9535 0x20 > /sys/bus/i2c/devices/i2c-12/new_device
+```
+
+**Note**:Here i2c-12 is used, since SMBus is located at bus 12. `0x20` is GPIO device slave address. Please refer the below screenshot to know the i2c bus number and GPIO device address.
+
+<img src="HowToInstallSEMA.assets/image-20200306144803201.png" alt="image-20200306144803201" style="zoom:67%;" />
+
+
 
