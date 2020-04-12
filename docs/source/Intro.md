@@ -24,7 +24,7 @@
 
   This describes the different designs on WIndows & Linux.
 
-|               Windows SEMA 4.0                |              Linux SEMA 4.0               |
+|               Windows 10             |              Linux             |
 | :-------------------------------------------: | :---------------------------------------------: |
 | ![](source/Intro.assets/sema_highlevel_arch_win.png) | ![](source/Intro.assets/sema_highlevel_arch_linux.png) |
 
