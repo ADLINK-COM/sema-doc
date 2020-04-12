@@ -30,13 +30,13 @@
 
   
 
-  * For Windows SEMA 4.0:
+  * For Windows 10:
     To add SemaEAPI.dll into your application to access the function. please check SEMA utility as the 	   example code for your reference.
     **Note:** The souce code of SEMA utility & EAPI is located at GitHub. Please contact us if you would like 	            the codes of BMC SMBus driver.
 
   
 
-  * For Linux SEMA 4.0:
+  * For Linux:
     It provides two methods to access BMC :
     1. EAPI Library:  
        With the introduction of the COM Express specification a software interface (available free of charge at https://www.picmg.org/wp-content/uploads/COM_EAPI_R1_0.pdf) was created.  
