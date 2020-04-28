@@ -14,7 +14,7 @@ Provides an interface to control or get the board's information, including:
 * To get the board manufacturer name:
 
   ```
-  cat /sys/bus/platform/devices/adl-bmc-  boardinfo/information/manufacturer_name
+  cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/manufacturer_name
   ```
 
 * To get the board name
