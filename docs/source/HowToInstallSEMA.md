@@ -72,7 +72,7 @@ sudo make install
 To load all of drivers
 
 ```
-sudo modprobe i2c_i801 adl-bmc adl-bmc-boardinfo adl-bmc-vm adl-bmc-wdt adl-bmc-fan adl-bmc-nvmem adl-bmc-bklight
+sudo modprobe –a i2c_i801 adl-bmc adl-bmc-boardinfo adl-bmc-vm adl-bmc-wdt adl-bmc-hwmon adl-bmc-nvmem adl-bmc-bklight
 ```
 
 After installed, these files will be located at the following path
