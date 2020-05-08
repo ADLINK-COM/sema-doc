@@ -66,10 +66,10 @@ Support two watchdog controls of the board. If the watchdog begins and reaches t
   ```
   echo <time in seconds> /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/PwrUpWDog
   ```
-  The example below sets the power-up watchdog timer timeout value as 1000 seconds.      
-  ```
+  The example below sets the power-up watchdog timer timeout value as 1000 seconds.   
+  
   echo 1000 > /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/PwrUpWDog
-  ```
+
   
 * To get the power-up watchdog timer value
   ```
