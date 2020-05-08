@@ -76,14 +76,19 @@ In the above example our device is hwmon2, so need to replace hwmonX in below co
 * To set temperature set points (1-4)         
 
   ```
-  echo > /sys/class/hwmon/hwmonX/device/pwm_auto_point_temp
+  echo {temperature} > /sys/class/hwmon/hwmonX/device/pwm_auto_point_temp
   ```
 
    In the example below, the user is setting temperature of set point 1 and Fan ID as 1 (SEMA_EAPI_ID_FAN_CPU) with temperature as 10
   
-  ```
-  echo 10 > /sys/class/hwmon/hwmon2/device/pwm1_auto_point1_temp
-  ```
+   echo 10 > /sys/class/hwmon/hwmon2/device/pwm1_auto_point1_temp
+   
+   echo 20 > /sys/class/hwmon/hwmon2/device/pwm1_auto_point2_temp
+   
+   echo 30 > /sys/class/hwmon/hwmon2/device/pwm1_auto_point3_temp
+   
+   echo 40 > /sys/class/hwmon/hwmon2/device/pwm1_auto_point4_temp
+
 
 * To get temperature set points (1-4)
 
@@ -93,21 +98,26 @@ In the above example our device is hwmon2, so need to replace hwmonX in below co
 
   In the example below, the user is getting temperature of set point 1 and fan ID 1 (SEMA_EAPI_ID_FAN_CPU) 
 
-  ```
    cat /sys/class/hwmon/hwmon2/device/pwm1_auto_point1_temp
-  ```
+   cat /sys/class/hwmon/hwmon2/device/pwm1_auto_point2_temp
+   cat /sys/class/hwmon/hwmon2/device/pwm1_auto_point3_temp
+   cat /sys/class/hwmon/hwmon2/device/pwm1_auto_point4_temp
+
 
 * To set PWM set points (1-4)
 
   ```
-  echo  > /sys/class/hwmon/hwmonX/device/pwm_auto_point_pwm
+  echo {PWM value} > /sys/class/hwmon/hwmonX/device/pwm_auto_point_pwm
   ```
 
   In the example below, user is setting PWM value of set point 1 and fan ID 1 (SEMA_EAPI_ID_FAN_CPU) with PWM level as 10
   
-  ```
+  
   echo 10 > /sys/class/hwmon/hwmon2/device/pwm1_auto_point1_pwm
-  ```
+  echo 10 > /sys/class/hwmon/hwmon2/device/pwm1_auto_point2_pwm
+  echo 10 > /sys/class/hwmon/hwmon2/device/pwm1_auto_point3_pwm
+  echo 10 > /sys/class/hwmon/hwmon2/device/pwm1_auto_point4_pwm
+  
 
 * To get PWM set points (1-4)
 
@@ -117,9 +127,11 @@ In the above example our device is hwmon2, so need to replace hwmonX in below co
 
   In the example below, user is getting PWM value of set point 2 and fan ID as 2 (SEMA_EAPI_ID_FAN_SYSTEM_1 )
   
-  ```
+  cat /sys/class/hwmon/hwmon2/device/pwm2_auto_point1_pwm
   cat /sys/class/hwmon/hwmon2/device/pwm2_auto_point2_pwm
-  ```
+  cat /sys/class/hwmon/hwmon2/device/pwm2_auto_point3_pwm
+  cat /sys/class/hwmon/hwmon2/device/pwm2_auto_point4_pwm
+
 
 *  The configration of Fan Mode:
 
@@ -133,14 +145,12 @@ In the above example our device is hwmon2, so need to replace hwmonX in below co
   * To set fan mode
 
     ```
-    echo  > /sys/class/hwmon/hwmonX/device/pwm1_enable
+    echo {FAN Mode value} > /sys/class/hwmon/hwmonX/device/pwm1_enable
     ```
 
     In the example below, user is setting fan mode as 1
 
-    ```
     echo 1 > /sys/class/hwmon/hwmon2/device/pwm1_enable
-    ```
 
   * To get fan mode
 
@@ -160,19 +170,17 @@ In the above example our device is hwmon2, so need to replace hwmonX in below co
    * To set temperature source
 
        ```
-       echo  /sys/class/hwmon/hwmonX/device/pwm1_auto_channels_temp 
+       echo {temperature source value} /sys/class/hwmon/hwmonX/device/pwm1_auto_channels_temp 
        ```
 
        In the example below, user is setting temperature source as 1 (Board temperature)
 
-       ```
        echo 1 > /sys/class/hwmon/hwmon2/device/pwm1_auto_channels_temp
-       ```
 
 * To get temperature source:
-
-       cat /sys/class/hwmon/hwmon2/device/pwm1_auto_channels_temp  
-   
+    ``` 
+    cat /sys/class/hwmon/hwmon2/device/pwm1_auto_channels_temp  
+    ``` 
 * To get CPU current temperature
   
     ```
@@ -180,77 +188,75 @@ In the above example our device is hwmon2, so need to replace hwmonX in below co
     ```
 
 * To get CPU minimum temperature
-  
-       cat /sys/class/hwmon/hwmonX/device/cpu_min_temp
-   
-* To get CPU maximum temperature.
-  
-       cat /sys/class/hwmon/hwmonX/device/cpu_max_temp
-   
+    ``` 
+    cat /sys/class/hwmon/hwmonX/device/cpu_min_temp
+    ```
+* To get CPU maximum temperature
+    ``` 
+    cat /sys/class/hwmon/hwmonX/device/cpu_max_temp
+    ``` 
 * To get CPU startup temperature
-  
-       cat /sys/class/hwmon/hwmonX/device/cpu_startup_temp
-   
-* To get system1 current temperature.
-  
-       cat /sys/class/hwmon/hwmonX/device/sys1_cur_temp
-
+    ``` 
+    cat /sys/class/hwmon/hwmonX/device/cpu_startup_temp
+    ``` 
+* To get system1 current temperature
+    ```   
+    cat /sys/class/hwmon/hwmonX/device/sys1_cur_temp
+    ``` 
 * To get system1 minimum temperature
-  ```
-  cat /sys/class/hwmon/hwmonX/device/sys1_min_temp
-  ```
+    ```
+    cat /sys/class/hwmon/hwmonX/device/sys1_min_temp
+    ```
   
 * To get system1 maximum temperature
-
-  ```
-  cat /sys/class/hwmon/hwmonX/device/sys1_max_temp 
-  ```
+    ```
+    cat /sys/class/hwmon/hwmonX/device/sys1_max_temp 
+    ```
 
 * To get system1 startup temperature.
-
-  ```
-  cat /sys/class/hwmon/hwmonX/device/sys1_startup_temp 
-  ```
+    ```
+    cat /sys/class/hwmon/hwmonX/device/sys1_startup_temp 
+    ```
 
 * To get system2 current temperature
-  ```
-  cat /sys/class/hwmon/hwmonX/device/sys2_cur_temp 
-  ```
+    ```
+    cat /sys/class/hwmon/hwmonX/device/sys2_cur_temp 
+    ```
   
 * To get system2 minimum temperature.
-  ```
-  cat /sys/class/hwmon/hwmonX/device/sys2_min_temp 
-  ```
+    ```
+    cat /sys/class/hwmon/hwmonX/device/sys2_min_temp 
+    ```
   
 * To get system2 maximum temperature.
-  ```
-  cat /sys/class/hwmon/hwmonX/device/sys2_max_temp 
-  ```
+    ```
+    cat /sys/class/hwmon/hwmonX/device/sys2_max_temp 
+    ```
   
 * To get system2 startup temperature.
-  ```
-  cat /sys/class/hwmon/hwmonX/device/sys2_startup_temp 
-  ```
+    ```
+    cat /sys/class/hwmon/hwmonX/device/sys2_startup_temp 
+    ```
 
 * To get CPU fan speed.
-  ```
-  cat /sys/class/hwmon/hwmonX/device/cpu_fan_speed 
-  ```
+    ```
+    cat /sys/class/hwmon/hwmonX/device/cpu_fan_speed 
+    ```
 
 * To get system1 fan speed.
-  ```
-  cat /sys/class/hwmon/hwmonX/device/sys1_fan_speed 
-  ```
+    ```
+    cat /sys/class/hwmon/hwmonX/device/sys1_fan_speed 
+    ```
 
 * To get system2 fan speed.
-  ```
-  cat /sys/class/hwmon/hwmonX/device/sys2_fan_speed 
-  ```
+    ```
+    cat /sys/class/hwmon/hwmonX/device/sys2_fan_speed 
+    ```
 
 * To get system3 fan speed.
-  ```
-  cat /sys/class/hwmon/hwmonX/device/sys3_fan_speed
-  ```
+    ```
+    cat /sys/class/hwmon/hwmonX/device/sys3_fan_speed
+    ```
 
 
 
