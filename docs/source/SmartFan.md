@@ -100,7 +100,9 @@ In the above example our device is hwmon2, so need to replace hwmonX in below co
 
    cat /sys/class/hwmon/hwmon2/device/pwm1_auto_point1_temp
    cat /sys/class/hwmon/hwmon2/device/pwm1_auto_point2_temp
+   
    cat /sys/class/hwmon/hwmon2/device/pwm1_auto_point3_temp
+   
    cat /sys/class/hwmon/hwmon2/device/pwm1_auto_point4_temp
 
 
@@ -114,8 +116,11 @@ In the above example our device is hwmon2, so need to replace hwmonX in below co
   
   
   echo 10 > /sys/class/hwmon/hwmon2/device/pwm1_auto_point1_pwm
+  
   echo 10 > /sys/class/hwmon/hwmon2/device/pwm1_auto_point2_pwm
+  
   echo 10 > /sys/class/hwmon/hwmon2/device/pwm1_auto_point3_pwm
+  
   echo 10 > /sys/class/hwmon/hwmon2/device/pwm1_auto_point4_pwm
   
 
@@ -128,8 +133,11 @@ In the above example our device is hwmon2, so need to replace hwmonX in below co
   In the example below, user is getting PWM value of set point 2 and fan ID as 2 (SEMA_EAPI_ID_FAN_SYSTEM_1 )
   
   cat /sys/class/hwmon/hwmon2/device/pwm2_auto_point1_pwm
+  
   cat /sys/class/hwmon/hwmon2/device/pwm2_auto_point2_pwm
+  
   cat /sys/class/hwmon/hwmon2/device/pwm2_auto_point3_pwm
+  
   cat /sys/class/hwmon/hwmon2/device/pwm2_auto_point4_pwm
 
 
