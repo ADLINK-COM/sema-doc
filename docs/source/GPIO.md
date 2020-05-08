@@ -1,7 +1,9 @@
 
 ### GPIO Access
 
-Provides a set of functions to control GPIO pins.
+* Provides a set of functions to control GPIO pins.
+* Only supports the specific exnternal GPIO controller : PCA9535 I/O expander on COM/SMARC Module
+* For Linux users, PCA9535 kernel driver is ready on your Linux. Please use GPIO sysfs Interface to access pins. We don't provide any SEMA GPIO EAPI function on Linux environment.
 
 
 
@@ -44,11 +46,6 @@ echo 1 > /sys/class/gpio/gpio251/value
 
 
 #### List of SEMA EAPI (Only for Windows)
-
-1. Only supports the specific exnternal GPIO controller : **PCA9535 I/O expander on COM/SMARC Module**
-2. For Linux users, PCA9535 kernel driver is ready on your Linux. Please use GPIO sysfs Interface to access pins. We don't provide any SEMA GPIO EAPI function on Linux environment.
-
-<br /> 
 
 
 ```
