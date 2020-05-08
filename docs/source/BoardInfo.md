@@ -41,19 +41,19 @@ Provides an interface to control or get the board's information, including:
   cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/hw_rev
   ```
 
-* To get the board bootloader version information
+* To get the board bootloader version
 
   ```
   cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/bmc_boot_version
   ```
 
-* To get the BMC application version information
+* To get the BMC application version
 
   ```
   cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/application_version
   ```
 
-* To get the last system restart event information
+* To get the last system restart event 
 
   ```
   cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/restart_event_str
@@ -71,13 +71,13 @@ Provides an interface to control or get the board's information, including:
   cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/manufactured_date
   ```
 
-* To get the board MAC id
+* To get the board MAC Address
 
   ```
   cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/mac_address
   ```
 
-* To get the board second hardware revision information
+* To get the board second hardware revision 
 
   ```
   cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/second_hw_rev
@@ -168,7 +168,7 @@ cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/main_current
   cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/err_num_des
   ```
   
-  **Note***: Here 88 is one of the error number showed in error log. It may be change from platform to platform.
+  **Note***: For example, **88** is one of the error number showed in error log. It may be change from platform to platform.
 
 * To set exception code and get exception description
 
