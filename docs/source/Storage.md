@@ -15,7 +15,7 @@ Support to access 1K-Bytes EEPROM on BMC device.
   cat /sys/bus/platform/devices/adl-bmc-nvmem/capabilities/nvmemcap
   ```
 
-* To read the storage area,
+* To read the storage area
 
   ```
   hexdump /sys/bus/nvmem/devices/<nvmem index>/nvmem
