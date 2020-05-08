@@ -29,7 +29,7 @@ Support two watchdog controls of the board. If the watchdog begins and reaches t
   
 * To stop the watchdog
   ```
-  echo 0 > /dev/watchdog0
+  echo "V" > /dev/watchdog0
   ```
   
 * To trigger / ping the watchdog
@@ -60,6 +60,8 @@ Support two watchdog controls of the board. If the watchdog begins and reaches t
 * To get minimum/maximum watchdog timeout value
   ```
   /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/wdt_min_timeout
+  
+  /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/wdt_max_timeout
   ```
   
 * To start / update the power-up watchdog timer value:
