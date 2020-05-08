@@ -29,7 +29,7 @@ Support two watchdog controls of the board. If the watchdog begins and reaches t
   
 * To stop the watchdog
   ```
-  **echo “V” > /dev/watchdog0
+  echo 0 > /dev/watchdog0
   ```
   
 * To trigger / ping the watchdog
@@ -60,25 +60,23 @@ Support two watchdog controls of the board. If the watchdog begins and reaches t
 * To get minimum/maximum watchdog timeout value
   ```
   /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/wdt_min_timeout
-  /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/wdt_max_timeout
   ```
   
-* To start / update the power up watchdog timer value
-  To update timeout out value, use the following format:
+* To start / update the power-up watchdog timer value:
   ```
-  echo  > /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/PwrUpWDog
+  echo <time in seconds> /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/PwrUpWDog
   ```
-  The example below sets the power up watchdog timer timeout value as 1000 seconds.      
+  The example below sets the power-up watchdog timer timeout value as 1000 seconds.      
   ```
   echo 1000 > /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/PwrUpWDog
   ```
   
-* To get the power up watchdog timer value
+* To get the power-up watchdog timer value
   ```
   cat /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/PwrUpWDog
   ```
 
-* To stop the power up watchdog timer
+* To stop the power-up watchdog timer
   ```
   echo 0 > /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/PwrUpWDog
   ```
