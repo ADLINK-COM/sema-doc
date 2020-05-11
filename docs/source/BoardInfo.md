@@ -148,6 +148,85 @@ cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/bmc_status
   ```
 cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/main_current 
   ```
+  
+  
+* To get the board VCORE voltage value
+
+  ```
+cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_vcore 
+  ```
+  
+
+* To get the board 2V5 voltage value
+
+  ```
+cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_2v5
+  ```
+
+
+* To get the board 3V3 voltage value
+
+  ```
+cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_3v3
+  ```
+  
+  
+* To get the board VBAT voltage value
+
+  ```
+cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_vbat
+  ```
+
+
+  
+* To get the board 5V voltage value
+
+  ```
+cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_5v
+  ```
+
+* To get the board 5VSB voltage value
+
+  ```
+cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_5vsb
+  ```
+
+
+* To get the board 12V voltage value
+
+  ```
+cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_12v
+  ```
+
+* To get the board GFX-VCORE voltage value
+
+  ```
+cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_gfx_vcore
+  ```
+  
+  
+* To get the board 1V05 voltage value
+
+  ```
+cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_1v05 
+  ```
+
+
+
+* To get the board 1V5 voltage value
+
+  ```
+cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_1v5
+  ```
+  
+  
+* To get the board VIN voltage value
+
+  ```
+cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_vin 
+  ```
+  
+
 
 * To get current position error log
 
