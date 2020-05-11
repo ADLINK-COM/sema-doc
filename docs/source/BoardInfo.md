@@ -212,7 +212,6 @@ cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_1v05
   ```
 
 
-
 * To get the board 1V5 voltage value
 
   ```
@@ -225,7 +224,9 @@ cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_1v5
   ```
 cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_vin 
   ```
-  
+ 
+ 
+ 
 
 
 * To get current position error log
