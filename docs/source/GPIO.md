@@ -3,7 +3,7 @@
 
 * Provides a set of functions to control GPIO pins.
 * Only supports the specific exnternal GPIO controller : PCA9535 I/O expander on COM/SMARC Module
-* For Linux users, PCA9535 kernel driver is ready on your Linux. Please use GPIO sysfs Interface to access pins. We don't provide any SEMA GPIO EAPI function on Linux environment.
+* For Linux users, please refer to [this](https://adlink-epm.github.io/sema-doc/#/source/HowToInstallSEMA?id=install-native-gpio-driver) and install PCA9535 kernel driver on your target device. Please use GPIO sysfs Interface to access pins. We don't provide any SEMA GPIO EAPI function on Linux environment.
 
 
 
