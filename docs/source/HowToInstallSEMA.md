@@ -29,7 +29,7 @@ Running the installwe which will be automatically installed SMBus driver, EAPI l
 
 <br />
 
-### Linux
+### Ubuntu Linux
 
 
 
