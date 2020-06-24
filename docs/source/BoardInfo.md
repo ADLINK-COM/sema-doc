@@ -4,7 +4,7 @@
 Provides an interface to control or get the board's information, including:
 
 * Static board information (ex: module name, BIOS version, or manufacturer name)
-* Dynmical board information (ex: voltage, current, boot count or temperature)
+* Dynamical board information (ex: voltage, current, boot count or temperature)
 * Failure forensics (ex: restart event)
 
 
@@ -41,7 +41,7 @@ Provides an interface to control or get the board's information, including:
   cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/hw_rev
   ```
 
-* To get the board bootloader version
+* To get the board boot loader version
 
   ```
   cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/bmc_boot_version
@@ -149,14 +149,12 @@ cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/bmc_status
 cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/main_current 
   ```
   
-  
 * To get the board VCORE voltage value
 
   ```
 cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_vcore 
   ```
   
-
 * To get the board 2V5 voltage value
 
   ```
@@ -170,15 +168,12 @@ cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_2v5
 cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_3v3
   ```
   
-  
 * To get the board VBAT voltage value
 
   ```
 cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_vbat
   ```
 
-
-  
 * To get the board 5V voltage value
 
   ```
@@ -204,7 +199,6 @@ cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_12v
 cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_gfx_vcore
   ```
   
-  
 * To get the board 1V05 voltage value
 
   ```
@@ -218,16 +212,11 @@ cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_1v05
 cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_1v5
   ```
   
-  
 * To get the board VIN voltage value
 
   ```
 cat /sys/bus/platform/devices/adl-bmc-boardinfo/information/voltage_vin 
   ```
- 
- 
- 
-
 
 * To get current position error log
 
@@ -362,7 +351,7 @@ uint32_t EApiBoardGetValue(uint32_t Id, uint8_t *pData, uint32_t nSize)
 | Bit 4  | Temperature sensors installed/available              |
 | Bit 5  | Voltage sensors installed/available                  |
 | Bit 6  | Storage of failure reason available (exception code) |
-| Bit 7  | Bootloader timeout Configuration                     |
+| Bit 7  | Boot loader timeout Configuration                    |
 | Bit 8  | Display control available                            |
 | Bit 9  | Power up watchdog available                          |
 | Bit 10 | the current sensors installed/available ??????       |
@@ -412,7 +401,7 @@ uint32_t EApiBoardGetValue(uint32_t Id, uint8_t *pData, uint32_t nSize)
 |   Bit 7   | BIOS Select<br />    - Single BIOS = 0<br />    - Fail-Safe-BIOS = 1 |
 |   Bit 6   | ATX Mode<br />    - AT Mode = 0<br />    - ATX mode = 1      |
 |   Bit 5   | reserved                                                     |
-| Bit 0 - 4 | Exception Code <br />**Note**: Code definition will be different for each hardware. please refer to [ADLINK offifical Website](https://www.adlinktech.com/) to seach for the Hardware User Manual or use **EApiGetExceptionDescription** |
+| Bit 0 - 4 | Exception Code <br />**Note**: Code definition will be different for each hardware. please refer to [ADLINK offifical Website](https://www.adlinktech.com/) to search for the Hardware User Manual or use **EApiGetExceptionDescription** |
 
 <br />
 
@@ -591,7 +580,7 @@ Get Error number history in the BMC. Failures in the Power Sequence are shown on
 
   * uint8_t *Flags:
 
-    Exception Code, selected BIOS and Power Mode ( see **EApiBoardGetValue** function and 		`SEMA_EAPI_ID_BOARD_BMC_FLAG` parameter) To get the detailed description from exception 		code, please use `SemaEApiBoardGetExceptionDescription`
+    Exception Code, selected BIOS and Power Mode ( see **EApiBoardGetValue** function and 		`SEMA_EAPI_ID_BOARD_BMC_FLAG` parameter) To get the detailed description from exception code, please use `SemaEApiBoardGetExceptionDescription`
 
     **Note**: Exception Code will be different for the platforms. please refer to [ADLINK official website](https://www.adlinktech.com/) to search for the Hardware User Manual to check your codes.
 
@@ -637,7 +626,7 @@ Get text information of the Error number in the error log (get from **EApiBoardG
 
   * uint32_t ErrorNum:
 
-    The Error number (Exception Code) ( Please refer to [ADLINK offifical Website](https://www.adlinktech.com/) to seach for Hardware User Manual)
+    The Error number (Exception Code) ( Please refer to [ADLINK offifical Website](https://www.adlinktech.com/) to search for Hardware User Manual)
 
   * uint8_t* pBuffer:
 
@@ -657,16 +646,10 @@ Get text information of the Exception Code
 
   * uint32_t ErrorNum:
 
-    The Error number (Exception Code)  ( Please refer to [ADLINK offifical Website](https://www.adlinktech.com/) to seach for Hardware User Manual)
+    The Error number (Exception Code)  ( Please refer to [ADLINK offifical Website](https://www.adlinktech.com/) to search for Hardware User Manual)
 
   * uint8_t* pBuffer:
 
     The description of error number
 
-```
 
-```
-
-```
-
-```

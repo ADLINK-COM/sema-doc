@@ -5,14 +5,11 @@
 
   ## What is SEMA?
 
-  **The Smart Embedded Management Agent (SEMA®)**
+ **The Smart Embedded Management Agent (SEMA®)**
 
-  Downtime of devices or systems is not acceptable in today's industries. To help customers to analyze their
-  systems and take counter measures for preventive maintenance, ADLINK Technology Inc. has developed a tool which is able to monitor and collect system performance and status information from the hardware in a timely, flexible and precise manner. A Board Management Controller collects all relevant technical information from the chipset and other sources.
+Downtime of devices or systems is not acceptable in today's industries. To help customers to analyze their systems and take counter measures for preventive maintenance, ADLINK Technology Inc. has developed a tool which is able to monitor and collect system performance and status information from the hardware in a timely, flexible and precise manner. A Board Management Controller collects all relevant technical information from the chipset and other sources.
 
-  Using the System Management Bus driver, an application layer fetches the data and presents it to the user.
-  SEMA® provides a ready-made application that shows the data in user-friendly graphic interfaces, suitable
-  for supervision and troubleshooting.
+Using the System Management Bus driver, an application layer fetches the data and presents it to the user. SEMA® provides a ready-made application that shows the data in user-friendly graphic interfaces, suitable for supervision and troubleshooting.
 
   
 
@@ -31,8 +28,8 @@
   
 
   * For Windows 10:
-    To add SemaEAPI.dll into your application to access the function. please check SEMA utility as the 	   example code for your reference.
-    **Note:** The souce code of SEMA utility & EAPI is located at GitHub. Please contact us if you would like 	            the codes of BMC SMBus driver.
+    To add SemaEAPI.dll into your application to access the function. please check SEMA utility as the example code for your reference.
+    **Note:** The source code of SEMA utility & EAPI is located at GitHub. Please contact us if you would like the codes of BMC SMBus driver.
 
   
 
@@ -56,8 +53,8 @@
 
   * Power Consumption
   * User Area Access
-  * I2C Control
-  * Temperatures (CPU and Board)
+      * I2C Control
+      * Temperatures (CPU and Board)
   * Board Information (Serial Number, Part Number, Firmware Version...)
   * Fan Control
   * GPIO Control

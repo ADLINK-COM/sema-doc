@@ -1,19 +1,32 @@
 
 ### I2C Control
 
-Provide an interface to access I2C devices. Please refer to the Hardware User Manual to check how many I2C interfaces which supported on your produt
+Provide an interface to access I2C devices. Please refer to the Hardware User Manual to check how many i2c interfaces which supported on your products
 
 **Note:** Only available with Tiva BMC and can't be supported on Renesas BMC.
 
 
 
+<br>
+
 
 
 #### How to use in Linux
 
-After adl-bmc-i2c driver loaded, please use `i2cdetect` command to look for **i2c-22**. Then, you can use Linux i2c commands to access your devices.
+After adl-bmc-i2c driver loaded, please use `i2cdetect` command to look for **i2c-22**. Then, you can use `i2c-tools` commands to access your devices.
 
    ![install4](i2c.assets/image-20200624145823777.png)
+
+
+
+**Note:** please refer to [here](https://www.mankier.com/package/i2c-tools) to guide you how to use i2c-tools command
+
+| command                                          | Description                        |
+| ------------------------------------------------ | ---------------------------------- |
+| [i2cdetect](https://www.mankier.com/8/i2cdetect) | detect I2C chips                   |
+| [i2cdump](https://www.mankier.com/8/i2cdump)     | examine I2C registers              |
+| [i2cget](https://www.mankier.com/8/i2cget)       | read from I2C/SMBus chip registers |
+| [i2cset](https://www.mankier.com/8/i2cset)       | set I2C registers                  |
 
 
 
@@ -42,7 +55,7 @@ Returns the capabilities of the selected I2C bus.
 
   * uint32_t *pMaxBlkLen:
 
-    Size in bytes, pointer to a buffer that receives the maximum transfer block length for the given      interface. Note that care must be taken if used in combination withEapiI2CWriteTransfer as the maximum data payload length will be pMaxBlkLen (write overhead). For example, a 7-bit    	 	    addressed device with extended command has a write overhead of 2 bytes which are 		 		   	    command.
+    Size in bytes, pointer to a buffer that receives the maximum transfer block length for the given      interface. Note that care must be taken if used in combination `withEapiI2CWriteTransfer` as the maximum data payload length will be pMaxBlkLen (write overhead). For example, a 7-bit addressed device with extended command has a write overhead of 2 bytes which are command.
 
 
   **Note**: Max length of data byte to write is **29 Bytes**; Max length of data byte to read is **32 Bytes**
@@ -158,7 +171,7 @@ Reads from a specific register in the selected I2C device. Reads from I2C device
 
   * uint32_t BufLen:
 
-    Size, in bytes, of the buffer pointed to by the pBuffer parameter. If the buffer specified by 		    	       pBuffer parameter is not large enough to hold the data, the function returns the value 			               `EAPI_STATUS_MORE_DATA`
+    Size, in bytes, of the buffer pointed to by the pBuffer parameter. If the buffer specified by pBuffer parameter is not large enough to hold the data, the function returns the value  `EAPI_STATUS_MORE_DATA`
 
   * uint32_t ByteCnt:
 

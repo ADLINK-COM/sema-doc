@@ -6,7 +6,7 @@ Support two watchdog controls of the board. If the watchdog begins and reaches t
 
 
 
-* **Run-Time Watchdog:** used in the OS to monitor the process or the application. BIOS also provides the capability to enable, disable and setup timeout value on BIOS Menu. If enable run-time watchdog on BIOS meun, please make a trigget to extend the timeout or system reboot.
+* **Run-Time Watchdog:** used in the OS to monitor the process or the application. BIOS also provides the capability to enable, disable and setup timeout value on BIOS Menu. If enable run-time watchdog on BIOS menu, please make a trigger to extend the timeout or system reboot.
 
   **Note:** timeout value will continuously keep until run-time watchdog is disabled on BIOS Menu or using SEMA functions to stop it.  
 
@@ -72,7 +72,6 @@ Support two watchdog controls of the board. If the watchdog begins and reaches t
   
   echo 1000 > /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/PwrUpWDog
 
-  
 * To get the power-up watchdog timer value
   ```
   cat /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/PwrUpWDog
@@ -106,15 +105,15 @@ Get the capabilities of **run-time watchdog**
 
   * uint32_t *pMaxDelay:
 
-    Pointer to a buffer that receives maximum supported initial delay time of the watchdog timer 		in miliseconds.
+    Pointer to a buffer that receives maximum supported initial delay time of the watchdog timer in miliseconds.
 
   * uint32_t *pMaxEventTimeout:
 
-    ​		Pointer to a buffer that receives maximum supported event timeout of the watchdog timer in 		miliseconds.
+    ​		Pointer to a buffer that receives maximum supported event timeout of the watchdog timer in miliseconds.
 
   * uint32_t* Resetvalue:
 
-    ​		Pointer to a buffer that receives maximum supported event timeout of the watchdog timer in 		miliseconds.
+    ​		Pointer to a buffer that receives maximum supported event timeout of the watchdog timer in miliseconds.
 
 
 ```
@@ -133,11 +132,11 @@ Start to **run-time watchdog** timer. To reset timer value, timer must be stopee
 
   * uint32_t delay:
 
-    ​		Initial delay for the watchdog timer in milliseconds. (currently not supported by SEMA EAPI, set  	    it as 0)
+    ​		Initial delay for the watchdog timer in milliseconds. (currently not supported by SEMA EAPI, set  it as 0)
 
   * uint32_t EventTimeout:
 
-    ​		Initial delay for the watchdog timer in milliseconds. (currently not supported by SEMA EAPI, set    	    it as 0)
+    ​		Initial delay for the watchdog timer in milliseconds. (currently not supported by SEMA EAPI, set it as 0)
 
   * uint32_t ResetTime:
 

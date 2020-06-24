@@ -7,7 +7,7 @@ Also provide two different operations to control PWM speed:
 
 * Operation of SMART FAN Mode:  
 
-  please use **EApiSmartFanSetMode** function with `SEMA_FAN_MODE_AUTO` parameter and provides 4 levels of temerpature & 4 levels of PWM are configured to get the below ladder chart:
+  please use **EApiSmartFanSetMode** function with `SEMA_FAN_MODE_AUTO` parameter and provides 4 levels of temperature & 4 levels of PWM are configured to get the below ladder chart:
 
   For example:
 
@@ -22,7 +22,7 @@ Also provide two different operations to control PWM speed:
   
 * Operation of SOFT FAN Mode:
 
-  Please use BMC capability command to check Bit 34 & Bit 39 to see whic design of SOFT FAN are using on your platform.
+  Please use BMC capability command to check Bit 34 & Bit 39 to see which design of SOFT FAN are using on your platform.
 
   | Bit 34 | Bit 39 | FAN Mode               | Type                                                         |
   | ------ | ------ | ---------------------- | ------------------------------------------------------------ |
@@ -44,12 +44,12 @@ Also provide two different operations to control PWM speed:
 
   2. Linear chart 2 with 2 level of temperature & PWM configuration:
   
-    For exmple:  **(The Rule is  t1 = t2; t3 = t4; p3 = p4)**
+    For example:  **(The Rule is  t1 = t2; t3 = t4; p3 = p4)**
   
   |             | Level 1      | Level 2      | Level 3      | level 4     |
 | ----------- | ------------ | ------------ | ------------ | ------------ |
-  | Temperature | **30℃ (t1)** | **30℃ (t2)** | **75℃ (t3)** | **75℃ (t4)** |
-  | PWM         | 0 (p1)       | 30 (p2)      | **100 (p3)** | **100 (p4)** |
+  | Temperature | 30℃ (t1) | 30℃ (t2) | 75℃ (t3) | 75℃ (t4) |
+  | PWM         | 0 (p1)  | 30 (p2)    | 100 (p3) | 100 (p4) |
   
     ![image-20200215144606569](SmartFan.assets/image-20200215144606569.png)
 
@@ -82,11 +82,11 @@ In the above example our device is hwmon2, so need to replace hwmonX in below co
    In the example below, the user is setting temperature of set point 1 and Fan ID as 1 (SEMA_EAPI_ID_FAN_CPU) with temperature as 10
   
    echo 10 > /sys/class/hwmon/hwmon2/device/pwm1_auto_point1_temp
-   
+  
    echo 20 > /sys/class/hwmon/hwmon2/device/pwm1_auto_point2_temp
-   
+  
    echo 30 > /sys/class/hwmon/hwmon2/device/pwm1_auto_point3_temp
-   
+  
    echo 40 > /sys/class/hwmon/hwmon2/device/pwm1_auto_point4_temp
 
 
@@ -100,9 +100,9 @@ In the above example our device is hwmon2, so need to replace hwmonX in below co
 
    cat /sys/class/hwmon/hwmon2/device/pwm1_auto_point1_temp
    cat /sys/class/hwmon/hwmon2/device/pwm1_auto_point2_temp
-   
+  
    cat /sys/class/hwmon/hwmon2/device/pwm1_auto_point3_temp
-   
+  
    cat /sys/class/hwmon/hwmon2/device/pwm1_auto_point4_temp
 
 
@@ -123,7 +123,6 @@ In the above example our device is hwmon2, so need to replace hwmonX in below co
   
   echo 10 > /sys/class/hwmon/hwmon2/device/pwm1_auto_point4_pwm
   
-
 * To get PWM set points (1-4)
 
   ```
@@ -168,7 +167,7 @@ In the above example our device is hwmon2, so need to replace hwmonX in below co
   
   
   
-* The configration of temperature source
+* The configuration of temperature source
 
   | Temperature sources | Value |
   | ------------------- | ----- |
@@ -188,7 +187,7 @@ In the above example our device is hwmon2, so need to replace hwmonX in below co
 * To get temperature source:
     ``` 
     cat /sys/class/hwmon/hwmon2/device/pwm1_auto_channels_temp  
-    ``` 
+    ```
 * To get CPU current temperature
   
     ```
@@ -202,15 +201,15 @@ In the above example our device is hwmon2, so need to replace hwmonX in below co
 * To get CPU maximum temperature
     ``` 
     cat /sys/class/hwmon/hwmonX/device/cpu_max_temp
-    ``` 
+    ```
 * To get CPU startup temperature
     ``` 
     cat /sys/class/hwmon/hwmonX/device/cpu_startup_temp
-    ``` 
+    ```
 * To get system1 current temperature
     ```   
     cat /sys/class/hwmon/hwmonX/device/sys1_cur_temp
-    ``` 
+    ```
 * To get system1 minimum temperature
     ```
     cat /sys/class/hwmon/hwmonX/device/sys1_min_temp
@@ -546,7 +545,7 @@ Get the temperature source for the specified FAN ID. SMART FAN will be triggered
 
   * uint8_t* pTempSrc:
 
-    Pointer to a buffer that receives the current tmperature source.
+    Pointer to a buffer that receives the current temperature source.
 
     | Temperature Source ID | Description                    |
     | --------------------- | ------------------------------ |
@@ -580,7 +579,7 @@ Set the temperature source for the specified FAN ID. SMART FAN will be triggered
 
   * uint8_t pTempSrc:
 
-     Select ID as the paramter
+     Select ID as the parameter
 
     | Temperature Source ID | Description                    |
     | --------------------- | ------------------------------ |

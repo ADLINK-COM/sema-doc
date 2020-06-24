@@ -1,13 +1,22 @@
-### How to install SEMA on Windows & Linux
+### How to install on Windows & Linux
 
-### Windows 10 64bit
+
+
+* [Windows 10 64Bit](source/HowToInstallSEMA.md#windows-10-64bit)
+* [Ubuntu Linux](source/HowToInstallSEMA.md#ubuntu-llnux)
+
+
+
+<br> 
+
+### Windows 10 64Bit
 
 Please go to [here](https://hq0epm0west0us0storage.blob.core.windows.net/public/SEMA%204.0.0_20200215.rar)  to download the Installer which contains:
 
 * SEMA EAPI and SMBus Driver
 * Command Line Interface Application
 
-Running the installwe which will be automatically installed SMBus driver, EAPI library and command line utility.
+Running the installer which will be automatically installed SMBus driver, EAPI library and command line utility.
 
 1. After download, please execute the installer file and click "Next" button
 
@@ -24,10 +33,12 @@ Running the installwe which will be automatically installed SMBus driver, EAPI l
 
 4. You can see the installed files/folders under "**c:\Program Files\Adlink**"
 
-  * **Appliction** folder: includes EAPI.dll, EAPI.lib, semauti.exe, exmple codes.
+  * **Application** folder: includes EAPI.dll, EAPI.lib, semauti.exe, example codes.
   * **SEMA_SMBus_4** folder: includes Windows SMBus drivers (sys, inf files)
 
 <br />
+
+<br>
 
 ### Ubuntu Linux
 
@@ -45,60 +56,56 @@ sudo apt install build-essential git hexer i2c-tools
 
 #### Build and Install
 
-Download the source code from ADLINK git repository
+1. Download the source code from ADLINK git repository
 
 ```
 git clone https://github.com/ADLINK/sema-linux.git
 ```
 
-Change directory to sema-linux and run make.
+2. Change directory to sema-linux and run make.
 
 ```
 cd sema-linux
 ```
 
-Run make
+3. Run make
 
 ```
 sudo make
 ```
 
-To install driver modules, dynamic library and utilities into root file system.
+4. To install driver modules, dynamic library and utilities into root file system.
 
 ```
 sudo make install
 ```
 
-To load all of drivers
+5. To load all of drivers
 
 ```
 sudo modprobe –a i2c_i801 adl-bmc adl-bmc-boardinfo adl-bmc-vm adl-bmc-wdt adl-bmc-hwmon adl-bmc-nvmem adl-bmc-bklight adl-bmc-i2c
 ```
 
-After installed, these files will be located at the following path
+   **Note:** after installed, these files will be located at the following path
 
-| File       | Description                                           |
-| ---------- | ----------------------------------------------------- |
-| libsema.so | EAPI Libarary is located under `/usr/lib/`            |
-| semautil   | SEMA Command Line utility is located unde `/usr/bin/` |
+| File       | Description                                            |
+| ---------- | ------------------------------------------------------ |
+| libsema.so | EAPI Library is located under `/usr/lib/`              |
+| semautil   | SEMA Command Line utility is located under `/usr/bin/` |
 
-
-
-#### Install native GPIO driver
-
-Load the native PCA9535 GPIO driver
+6. Load the native PCA9535 GPIO driver
 
 ```
 sudo modprobe gpio-pca953x
 ```
 
-After loading kernel driver, configure the GPIO device with the following command.
+7. After loading kernel driver, configure the GPIO device with the following command.
 
 ```
 echo pca9535 0x20 > /sys/bus/i2c/devices/i2c-12/new_device
 ```
 
-**Note**:Here i2c-12 is used, since SMBus is located at bus 12. `0x20` is GPIO device slave address. Please refer the below screenshot to know the i2c bus number and GPIO device address.
+**Note**: here i2c-12 is used, since SMBus is located at bus 12. `0x20` is GPIO device slave address. Please refer the below screenshot to know the i2c bus number and GPIO device address.
 
 ![imag2](HowToInstallSEMA.assets/imag2.png)
 
