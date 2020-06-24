@@ -3,7 +3,7 @@
 
 
 * [Windows 10 64Bit](source/HowToInstallSEMA.md#windows-10-64bit)
-* [Ubuntu Linux](source/HowToInstallSEMA.md#ubuntu-llnux)
+* [Ubuntu Linux](source/HowToInstallSEMA.md#ubuntu-linux)
 
 
 
