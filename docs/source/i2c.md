@@ -13,7 +13,7 @@ Provide an interface to access I2C devices. Please refer to the Hardware User Ma
 
 After adl-bmc-i2c driver loaded, please use `i2cdetect` command to look for **i2c-22**. Then, you can use Linux i2c commands to access your devices.
 
-<img src="/source/i2c.assets/image-20200624145823777.png" alt="image-20200624145823777" style="zoom:67%;" />
+   ![install4](i2c.assets/image-20200624145823777.png)
 
 
 
