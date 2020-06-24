@@ -79,6 +79,6 @@
 
   * **Windows OS**: Windows 10 64bit
   * **Linux OS**: kernel 4.4 or above
-  * **Yocto Linux**: please go to [meta-adlink-seam](https://github.com/ADLINK/meta-adlink-sema/tree/sema4.0) 
+  * **Yocto Linux**: see [meta-adlink-seam](https://github.com/ADLINK/meta-adlink-sema/tree/sema4.0) for more details
   * **VxWorks (by request)**
   * **QNX (by request)**
