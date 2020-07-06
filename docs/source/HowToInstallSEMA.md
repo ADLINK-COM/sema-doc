@@ -90,7 +90,7 @@ sudo modprobe i2c_i801
 6. To load all of drivers
 
 ```
-sudo modprobe -a adl-bmc adl-bmc-boardinfo adl-bmc-vm adl-bmc-wdt adl-bmc-hwmon adl-bmc-nvmem adl-bmc-bklight adl-bmc-i2c
+sudo modprobe -a adl-bmc adl-bmc-boardinfo adl-bmc-vm adl-bmc-wdt adl-bmc-hwmon adl-bmc-nvmem adl-bmc-bklight adl-bmc-i2c gpio-pca953x
 ```
 
    **Note:** after installed, these files will be located at the following path
@@ -100,11 +100,6 @@ sudo modprobe -a adl-bmc adl-bmc-boardinfo adl-bmc-vm adl-bmc-wdt adl-bmc-hwmon 
 | libsema.so | EAPI Library is located under `/usr/lib/`              |
 | semautil   | SEMA Command Line utility is located under `/usr/bin/` |
 
-6. Load the native PCA9535 GPIO driver
-
-```
-sudo modprobe gpio-pca953x
-```
 
 7. After loading kernel driver, configure the GPIO device with the following command.
 
@@ -116,3 +111,7 @@ echo pca9535 0x20 > /sys/bus/i2c/devices/i2c-12/new_device
 
 ![imag2](HowToInstallSEMA.assets/imag2.png)
 
+
+**Note**: After adl-bmc-i2c driver loaded, please use i2cdetect command to look for ADLINK BMC I2C driver. Then, you can use i2c-tools commands to access your devices.
+
+![install4](i2c.assets/image-20200624145823777.png)
