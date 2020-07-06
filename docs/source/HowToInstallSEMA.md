@@ -111,7 +111,3 @@ echo pca9535 0x20 > /sys/bus/i2c/devices/i2c-12/new_device
 
 ![imag2](HowToInstallSEMA.assets/imag2.png)
 
-
-**Note**: After adl-bmc-i2c driver loaded, please use i2cdetect command to look for ADLINK BMC I2C driver. Then, you can use i2c-tools commands to access your devices.
-
-![install4](i2c.assets/image-20200624145823777.png)
