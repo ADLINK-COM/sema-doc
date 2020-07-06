@@ -80,10 +80,17 @@ sudo make
 sudo make install
 ```
 
-5. To load all of drivers
+5. To load i2c-i801 driver first
 
 ```
-sudo modprobe i2c_i801 adl-bmc adl-bmc-boardinfo adl-bmc-vm adl-bmc-wdt adl-bmc-hwmon adl-bmc-nvmem adl-bmc-bklight adl-bmc-i2c
+sudo modprobe i2c_i801 
+```
+
+
+6. To load all of drivers
+
+```
+sudo modprobe -a adl-bmc adl-bmc-boardinfo adl-bmc-vm adl-bmc-wdt adl-bmc-hwmon adl-bmc-nvmem adl-bmc-bklight adl-bmc-i2c
 ```
 
    **Note:** after installed, these files will be located at the following path
