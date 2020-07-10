@@ -71,7 +71,7 @@ cd sema-linux
 3. Run make
 
 ```
-![Screenshot from 2020-07-09 23-44-34](/home/adlink/Pictures/Screenshot from 2020-07-09 23-44-34.png)sudo make
+sudo make
 ```
 
 4. To install driver modules, dynamic library and utilities into root file system
