@@ -88,7 +88,7 @@ sudo vim /etc/modprobe.d/blacklist.conf
 
 ​       please comment **#blacklist i2c_i801** as the below:
 
-<img src="HowToInstallSEMA.assets/load_i2c_i801.png" alt="load_i2c_i801" style="zoom:80%;" />
+![load_i2c_i801](HowToInstallSEMA.assets/load_i2c_i801.png)
 
 6. To load all of drivers
 
