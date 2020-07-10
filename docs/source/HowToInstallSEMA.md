@@ -71,20 +71,25 @@ cd sema-linux
 3. Run make
 
 ```
-sudo make
+![Screenshot from 2020-07-09 23-44-34](/home/adlink/Pictures/Screenshot from 2020-07-09 23-44-34.png)sudo make
 ```
 
-4. To install driver modules, dynamic library and utilities into root file system.
+4. To install driver modules, dynamic library and utilities into root file system
 
 ```
 sudo make install
 ```
 
-5. To load i2c-i801 driver first
+5. To remove  i2c-i801 driver in the blacklist and make it automatically loaded
 
 ```
-sudo modprobe i2c_i801 
+sudo vim /etc/modprobe.d/blacklist.conf
 ```
+
+   please comment **#blacklist i2c_i801** as the below:
+
+<img src="/home/adlink/Pictures/Screenshot from 2020-07-09 23-44-34.png" alt="Screenshot from 2020-07-09 23-44-34" style="zoom:80%;" />
+
 
 
 6. To load all of drivers
