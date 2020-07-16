@@ -43,6 +43,22 @@ Running the installer which will be automatically installed SMBus driver, EAPI l
 ### Ubuntu Linux
 
 
+Before install sema, make i2c-i801 driver automatically be loaded.
+
+1. to remove it in the blacklist
+
+```
+sudo vim /etc/modprobe.d/blacklist.conf
+```
+
+​       please comment **#blacklist i2c_i801** as the below:
+
+![load_i2c_i801](HowToInstallSEMA.assets/load_i2c_i801.png)
+
+2. reboot your ubuntu system
+
+<br>
+
 
 Follow below instructions to build and install the SEMA utility on target machine.
 
@@ -80,17 +96,8 @@ sudo make
 sudo make install
 ```
 
-5. To remove  i2c-i801 driver in the blacklist and make it automatically loaded
 
-```
-sudo vim /etc/modprobe.d/blacklist.conf
-```
-
-​       please comment **#blacklist i2c_i801** as the below:
-
-![load_i2c_i801](HowToInstallSEMA.assets/load_i2c_i801.png)
-
-6. To load all of drivers
+5. To load all of drivers
 
 ```
 sudo modprobe -a adl-bmc adl-bmc-boardinfo adl-bmc-vm adl-bmc-wdt adl-bmc-hwmon adl-bmc-nvmem adl-bmc-bklight adl-bmc-i2c gpio-pca953x
@@ -104,7 +111,7 @@ sudo modprobe -a adl-bmc adl-bmc-boardinfo adl-bmc-vm adl-bmc-wdt adl-bmc-hwmon 
 | semautil   | SEMA Command Line utility is located under `/usr/bin/` |
 
 
-7. After loading kernel driver, configure the GPIO device with the following command.
+6. After loading kernel driver, configure the GPIO device with the following command.
 
 ```
 echo pca9535 0x20 > /sys/bus/i2c/devices/i2c-12/new_device
