@@ -128,7 +128,7 @@ Sets the configuration for the selected GPIO ports
 
 
 ```
-EApiGPIOGetLevel(uint32_t GpioId, uint32_t Bitmask, uint32_t* plevel)
+uint32_t EApiGPIOGetLevel(uint32_t GpioId, uint32_t Bitmask, uint32_t* plevel)
 ```
 
 **Description**
@@ -154,7 +154,7 @@ Read the from GPIO ports
 
 
 ```
-EApiGPIOSetLevel(uint32_t GpioId, uint32_t Bitmask, uint32_t plevel)
+uint32_t EApiGPIOSetLevel(uint32_t GpioId, uint32_t Bitmask, uint32_t plevel)
 ```
 
 **Description**
