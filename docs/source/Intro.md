@@ -75,7 +75,7 @@ Using the System Management Bus driver, an application layer fetches the data an
   --------------------------
 
   * **Windows OS**: Windows 10 64bit
-  * **Linux OS**: kernel 4.4 or above
+  * **Linux OS**: kernel 4.15 or above
   * **Yocto Linux**: see [meta-adlink-seam](https://github.com/ADLINK/meta-adlink-sema/tree/sema4.0) for more details
   * **VxWorks (by request)**
   * **QNX (by request)**
