@@ -22,41 +22,46 @@ Support two watchdog controls of the board. If the watchdog begins and reaches t
 
 #### List of Sys Interface 
 
-* To start the watchdog with timeout out value, use the following format:
+
+##### For Run-time Watchdog: 
+
+* To start/update the run-time watchdog with timeout out value, use the following format:
   ```
   wdogtest –timeout=<time in seconds>
   ```
   
-  The example below sets the watchdog timeout value as 20 seconds.
+  The example below sets the run-time watchdog timeout value as 20 seconds.
   ```
   wdogtest –timeout=20
   ```  
   
-* To stop the watchdog ( Timeout value will be set to '0'. Please set timeout again)
+* To stop the run-time watchdog ( Timeout value will be set to '0'. Please set timeout again)
   ```
   echo "V" > /dev/watchdog0
   ```
   
-* To trigger / ping the watchdog
+* To trigger / ping the run-time watchdog
   ```
   wdogtest –ping
   ```
   
-* To get the information about the watchdog state
+* To get the information about the run-time watchdog state
   ```
   cat /sys/class/watchdog/watchdog0/state
   ```
-* To get the current watchdog timeout value
+* To get the current run-time watchdog timeout value
   ```
   cat /sys/class/watchdog/watchdog0/timeout
   ```
-* To get minimum/maximum watchdog timeout value
+* To get minimum/maximum run-time watchdog timeout value
   ```
   /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/wdt_min_timeout
   
   /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/wdt_max_timeout
   ```
   
+##### For Power-up Watchdog  
+
 * To start / update the power-up watchdog timer value:
   ```
   echo <time in seconds> /sys/bus/platform/devices/adl-bmc-wdt/Capabilities/PwrUpWDog
