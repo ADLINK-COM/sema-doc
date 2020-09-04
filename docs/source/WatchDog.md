@@ -22,12 +22,17 @@ Support two watchdog controls of the board. If the watchdog begins and reaches t
 
 #### List of Sys Interface 
 
-* To start the watchdog
+* To start the watchdog with timeout out value, use the following format:
   ```
-  echo 1 > /dev/watchdog0
+  wdogtest –timeout=<time in seconds>
   ```
   
-* To stop the watchdog
+  The example below sets the watchdog timeout value as 20 seconds.
+  ```
+  wdogtest –timeout=20
+  ```  
+  
+* To stop the watchdog ( Timeout value will be set to '0'. Please set timeout again)
   ```
   echo "V" > /dev/watchdog0
   ```
@@ -37,18 +42,6 @@ Support two watchdog controls of the board. If the watchdog begins and reaches t
   wdogtest –ping
   ```
   
-* To update the watchdog timeout value
-
-  To set the watchdog timeout out value, use the following format:
-  ```
-  wdogtest –timeout=<time in seconds>
-  ```
-  
-  The example below sets the watchdog timeout value as 20 seconds.
-  ```
-  wdogtest –timeout=20
-  ```
-
 * To get the information about the watchdog state
   ```
   cat /sys/class/watchdog/watchdog0/state
