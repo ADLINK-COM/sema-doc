@@ -49,7 +49,7 @@ Support two watchdog controls of the board. If the watchdog begins and reaches t
   ```
   cat /sys/class/watchdog/watchdog0/state
   ```
-* To get the current run-time watchdog timeout value
+* To get the current run-time watchdog timeout value ( timeout value is not the elapsed time. it is your initial timeout)   
   ```
   cat /sys/class/watchdog/watchdog0/timeout
   ```
