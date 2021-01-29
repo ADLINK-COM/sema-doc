@@ -114,6 +114,8 @@ Get the capabilities of **run-time watchdog**
     ​		Pointer to a buffer that receives maximum supported event timeout of the watchdog timer in miliseconds.
 
 
+<br>
+
 ```
 uint32_t EApiWDogStart(
     uint32_t delay,
@@ -141,7 +143,7 @@ Start to **run-time watchdog** timer. To reset timer value, timer must be stopee
     ​		Watchdog timeout interval in milliseconds to trigger a reset.
 
 
-<br />
+<br>
 
 
 ```
@@ -156,8 +158,7 @@ reset the **run-time watchdog** timer
 
 
 
-<br />
-
+<br>
 
 ```
 uint32_t EApiWDogStop()
@@ -170,7 +171,7 @@ Stops the operation of the **run-time watchdog** timer
 * Parameters: N/A
 
 
-<br />
+<br>
 
 
 ```
@@ -188,7 +189,7 @@ enable the operation of the **power-up watchdog timer**
     Watchdog timeout interval in milliseconds to trigger a reset.
 
 
-<br />
+<br>
 
 
 ```
