@@ -33,7 +33,7 @@ Support two watchdog controls of the board. If the watchdog begins and reaches t
   The example below sets the run-time watchdog timeout value as 20 seconds.
   ```
   wdogtest –timeout=20
-  ```  
+  ```
   
 * To stop the run-time watchdog ( Timeout value will be set to '0'. Please set timeout again)
   ```
@@ -86,6 +86,7 @@ Support two watchdog controls of the board. If the watchdog begins and reaches t
 
 #### List of SEMA EAPI (Support Windows & Linux)
 
+Get the capabilities of **run-time watchdog**
 
   ```
 uint32_t EApiWDogGetCap(
@@ -95,31 +96,24 @@ uint32_t EApiWDogGetCap(
 )
   ```
 
-**Description**
-
-Get the capabilities of **run-time watchdog**
-
 * Parameters:
-
   * uint32_t *pMaxDelay:
 
-    Pointer to a buffer that receives maximum supported initial delay time of the watchdog timer in miliseconds.
+    Pointer to a buffer that receives maximum supported initial delay time of the watchdog timer in milliseconds.
 
-  * uint32_t *pMaxEventTimeout:
+     * uint32_t *pMaxEventTimeout:
 
-    ​		Pointer to a buffer that receives maximum supported event timeout of the watchdog timer in miliseconds.
+    		Pointer to a buffer that receives maximum supported event timeout of the watchdog timer in milliseconds.
 
-  * uint32_t* Resetvalue:
+     * uint32_t* Resetvalue:
 
-    ​		Pointer to a buffer that receives maximum supported event timeout of the watchdog timer in miliseconds.
+    		Pointer to a buffer that receives maximum supported event timeout of the watchdog timer in milliseconds.
 
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
+  <br />
+
+Start to **run-time watchdog** timer. To reset timer value, timer must be stopped by using **EApiWDogStop()** and then **EApiWDogStart()** be called again with new values.  
 
 ```
 uint32_t EApiWDogStart(
@@ -129,63 +123,51 @@ uint32_t EApiWDogStart(
 )
 ```
 
-**Description**
-
-Start to **run-time watchdog** timer. To reset timer value, timer must be stopeed by using **EApiWDogStop** and then **EApiWDogStart** be called again with new values.  
-
 * Parameters:
 
   * uint32_t delay:
 
-    ​		Initial delay for the watchdog timer in milliseconds. (currently not supported by SEMA EAPI, set  it as 0)
+    		Initial delay for the watchdog timer in milliseconds. (currently not supported by SEMA EAPI, set  it as 0)
 
   * uint32_t EventTimeout:
 
-    ​		Initial delay for the watchdog timer in milliseconds. (currently not supported by SEMA EAPI, set it as 0)
+    		Initial delay for the watchdog timer in milliseconds. (currently not supported by SEMA EAPI, set it as 0)
 
   * uint32_t ResetTime:
 
-    ​		Watchdog timeout interval in milliseconds to trigger a reset.
-
+    		Watchdog timeout interval in milliseconds to trigger a reset.
 
 <br>
+
+
+
+Reset the **run-time watchdog** timer
 
 
 ```
 uint32_t EApiWDogTrigger()
 ```
 
-**Description**
-
-reset the **run-time watchdog** timer
-
-* Parameters: N/A
-
 
 
 <br>
+
+Stop the operation of the **run-time watchdog** timer
 
 ```
 uint32_t EApiWDogStop()
 ```
 
-**Description**
-
-Stops the operation of the **run-time watchdog** timer
-
-* Parameters: N/A
 
 
 <br>
+
+Enable the operation of the **power-up watchdog timer**
 
 
 ```
 uint32_t EApiPwrUpWDogStart( uint32_t ResetTime)
 ```
-
-**Description**
-
-enable the operation of the **power-up watchdog timer**
 
 * Parameters:
 
@@ -193,17 +175,15 @@ enable the operation of the **power-up watchdog timer**
 
     Watchdog timeout interval in milliseconds to trigger a reset.
 
-
 <br>
+
+
+
+Disable the operation of the **power-up watchdog** timer (disable)
 
 
 ```
 uint32_t EApiPwrUpWDogStop()
 ```
 
-**Description**
-
-Disable the operation of the **power-up watchdog** timer (disable)
-
-* Parameters: N/A
-
+* 
