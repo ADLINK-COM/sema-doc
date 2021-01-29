@@ -114,6 +114,11 @@ Get the capabilities of **run-time watchdog**
     ​		Pointer to a buffer that receives maximum supported event timeout of the watchdog timer in miliseconds.
 
 
+
+<br>
+<br>
+<br>
+<br>
 <br>
 
 ```
