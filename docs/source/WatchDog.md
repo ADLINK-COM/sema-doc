@@ -201,6 +201,3 @@ Disable the operation of the **power-up watchdog** timer (disable)
 
 * Parameters: N/A
 
-```
-
-```
